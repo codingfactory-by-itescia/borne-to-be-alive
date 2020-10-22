@@ -1,1 +1,73 @@
 @import "../../assets/style/vars";
+
+section {
+    height: calc(50vh - 150px);
+    padding: 75px;
+
+    &.top {
+        background-color: $color_primary;
+        color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        grid-gap: 50px;
+        align-items: center;
+
+        .icon {
+            width: 150px;
+        }
+    }
+
+    p {
+        font-size: 36px;
+    }
+
+    &.bottom {
+        display: grid;
+        align-items: center;
+
+        p {
+            text-align: center;
+            font-weight: 600;
+            width: 389px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50px;
+    background-color: $color_primary;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 62px;
+        height: 62px;
+        border-radius: 50px;
+        transform: scale(1);
+        animation: pulse 2s infinite;
+        background-color: $color_primary;
+        opacity: .2;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    70% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
