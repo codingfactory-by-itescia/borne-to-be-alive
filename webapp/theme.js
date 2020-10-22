@@ -13,6 +13,6 @@ module.exports = {
 	"@highlight-color": "#722ed1",
 	"@warning-color": "#FCC14F",
 	"@normal-color": "#0B1B32",
-	"text-color": "#212121",
+	"text-color": "#141D31",
 
   };
