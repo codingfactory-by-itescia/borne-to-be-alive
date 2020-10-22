@@ -1,12 +1,12 @@
 module.exports = {
 	"@body-background": "#F3F3F3",
 
-	"@font-family": "Source Sans Pro, sans-serif;",
+	"@font-family": "Dosis, sans-serif",
 
 	"@border-color-base": "#BDBFCC",
 
-	"@primary-color": "#F47241",
-	"@secondary-color": "#FDA236",
+	"@primary-color": "#00B2B2",
+	"@secondary-color": "#C4E889",
 	"@info-color": "#1D375D",
 	"@success-color": "#77D1AE",
 	"@error-color": "#DD4C3E",
