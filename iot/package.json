@@ -2,5 +2,12 @@
   "name": "iot",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "hexify": "^1.0.1",
+    "lua-in-js": "^2.2.0",
+    "node-tlv": "^1.5.14",
+    "pcsclite": "^1.0.0",
+    "smartcard": "^1.0.37"
+  }
 }
