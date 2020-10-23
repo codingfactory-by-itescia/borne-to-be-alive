@@ -1,1 +1,14 @@
 @import "../../assets/style/vars";
+
+.ant-layout {
+    min-height: 100vh;
+    padding: 0;
+}
+
+.ant-layout-sider {
+    background-color: $color-primary;
+}
+
+.ant-layout-content {
+    padding: 50px;
+}
