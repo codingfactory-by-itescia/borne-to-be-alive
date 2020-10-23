@@ -2,6 +2,7 @@ module.exports = {
 	"@body-background": "#F3F3F3",
 
 	"@font-family": "Dosis, sans-serif",
+	"@font-size-base": "20px;",
 
 	"@border-color-base": "#BDBFCC",
 
