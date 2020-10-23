@@ -8,6 +8,20 @@ import React, { Component } from 'react';
 import { Button, Row, Col } from 'antd';
 
 export default class Accueil extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			isDisabled: false
+		}
+		this.disable = this.disable.bind(this);
+	}
+
+	disable() {
+		this.setState({
+			isDisabled: true
+		})
+	}
 	render() {
 		return (
 			<div className='app-container'>
@@ -28,7 +42,7 @@ export default class Accueil extends Component {
 								<div className='icon-container'>
 									<img src={icon_ticket} alt="ticket icon" className="icon" />
 								</div>
-								<Button className="button">RETIRER UN TICKET</Button>
+								<Button onClick={this.disable} className={this.state.isDisabled ? 'button disabled' : 'button'}>IMPRIMER UN TICKET</Button>
 							</Col>
 							<Col className='card'>
 								<div className='icon-container'>
