@@ -1,6 +1,6 @@
 import './style.scss';
 
-import icon_calendar from '../../assets/img/icon_calendar.png';
+import icon_ticket from '../../assets/img/icon_ticket.png';
 import icon_mobile from '../../assets/img/icon_mobile.png';
 import logo_blue from '../../assets/img/Logo_blue.png';
 
@@ -13,16 +13,24 @@ export default class Ticket extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			shouldHide: true
+			shouldHide: true,
+			isDisabled: false
 		}
 
 		this.onClick = this.onClick.bind(this);
+		this.disable = this.disable.bind(this);
 	}
 
 	onClick() {
 		this.setState({
 			shouldHide: false
 		});
+	}
+
+	disable() {
+		this.setState({
+			isDisabled: true
+		})
 	}
 
 	render() {
@@ -54,9 +62,9 @@ export default class Ticket extends Component {
 							</Col>
 							<Col className='card'>
 								<div className='icon-container'>
-									<img src={icon_calendar} alt="calendar icon" className="icon" />
+									<img src={icon_ticket} alt="calendar icon" className="icon" />
 								</div>
-								<Button className="button">RENDEZ-VOUS</Button>
+								<Button onClick={this.disable} className={this.state.isDisabled ? 'button disabled' : 'button'}>IMPRIMER UN TICKET</Button>
 							</Col>
 						</Row>
 					</div>

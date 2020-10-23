@@ -106,3 +106,9 @@ p.info {
     margin-top: 12px;
     border-radius: 5px;
 }
+
+.button.disabled {
+    background-color: #E5E5E5;
+    color: #fff;
+    border: none;
+}

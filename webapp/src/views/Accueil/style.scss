@@ -20,6 +20,12 @@
     border-radius: 5px;
 }
 
+.button.disabled {
+    background-color: #E5E5E5;
+    color: #fff;
+    border: none;
+}
+
 .text-container {
     text-align: center;
     margin-top: 76px;
