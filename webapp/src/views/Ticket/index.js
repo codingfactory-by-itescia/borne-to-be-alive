@@ -5,10 +5,26 @@ import icon_mobile from '../../assets/img/icon_mobile.png';
 import logo_blue from '../../assets/img/Logo_blue.png';
 
 import React, { Component } from 'react';
-import { Button, Row, Col } from 'antd';
+import { Button, Row, Col, Input } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 
 export default class Ticket extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			shouldHide: true
+		}
+
+		this.onClick = this.onClick.bind(this);
+	}
+
+	onClick() {
+		this.setState({
+			shouldHide: false
+		});
+	}
+
 	render() {
 		return (
 			<div className='app-container'>
@@ -28,13 +44,13 @@ export default class Ticket extends Component {
 					</p>
 				</div>
 				<div>
-					<div className='container'>
+					<div className={this.state.shouldHide ? 'container' : 'hidden'}>
 						<Row gutter={[16, 24]} className='gutter-row'>
 							<Col className='card'>
 								<div className='icon-container'>
 									<img src={icon_mobile} alt="mobile icon" className="icon" />
 								</div>
-								<Button className="button">SMS</Button>
+								<Button onClick={this.onClick} className="button">SMS</Button>
 							</Col>
 							<Col className='card'>
 								<div className='icon-container'>
@@ -43,6 +59,11 @@ export default class Ticket extends Component {
 								<Button className="button">RENDEZ-VOUS</Button>
 							</Col>
 						</Row>
+					</div>
+
+					<div className={this.state.shouldHide ? 'hidden' : 'container'}>
+						<Input className='phone-input' placeholder="Numéro de portable" />
+						<Button className="phone-button">Envoyer</Button>
 					</div>
 				</div>
 				<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' />

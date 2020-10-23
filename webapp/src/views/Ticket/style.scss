@@ -45,6 +45,10 @@
     margin: 0 auto;
 }
 
+.hidden {
+    display: none;
+}
+
 .greetings {
     font-size: 55px;
 }
@@ -84,4 +88,21 @@ p.info {
     position: fixed;
     right: 36px;
     bottom: 36px;
+}
+
+.phone-input, .phone-button {
+    width: 595px;
+    height: 60px;
+}
+
+.phone-input {
+    border-radius: 10px;
+    border: solid 4px #CBC3C3;
+}
+
+.phone-button {
+    background-color: $color_primary;
+    color: #fff;
+    margin-top: 12px;
+    border-radius: 5px;
 }
