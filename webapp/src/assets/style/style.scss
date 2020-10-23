@@ -1,7 +1,42 @@
 @import "./vars";
 @import "./fonts";
 
+
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.ant-layout {
+    min-height: 100vh !important;
+    padding: 0 !important;
+
+    &-sider {
+        background-color: $color-primary !important;
+        max-width: 350px !important;
+        min-width: 350px !important;
+        width: 350px !important;
+        padding: 30px;
+
+        h2 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        p, span {
+            color: #fff !important;
+            font-size: 20px;
+        }
+    }
+
+    &-sider-children {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+.ant-layout-content {
+    padding: 50px;
 }
