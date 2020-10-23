@@ -1,0 +1,49 @@
+@import "../../assets/style/vars";
+
+.ant-layout{
+    min-height: 100vh;
+    padding: 0;
+}
+
+.ant-layout-sider{
+    background-color: $color_primary;
+    min-width: 25vw !important;
+
+    p{
+        margin: 0 auto;
+        text-align: center;
+        color: #FFF;
+    }
+}
+
+.ant-layout-content{
+    background-color: #FFF;
+
+    p{
+        padding-top: 5vh;
+        margin-left: 25vw ;
+        text-align: center;
+    }
+}
+
+.medicButton{
+    width: 275px;
+    height: 60px;
+    color: $color_primary;
+    background-color: #FFF;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+}
+
+.patientItem{
+    background-color: $color_primary;
+    color: #FFF;
+    font-weight: 600;
+    margin-left: 15vw;
+    margin-right: 20vw;
+    margin-top: 5vh;
+}
+
