@@ -26,20 +26,22 @@ export default class Accueil extends Component {
 						<Row gutter={[16, 24]} className='gutter-row'>
 							<Col className='card'>
 								<div className='icon-container'>
-								<img src={icon_ticket} alt="ticket icon" className="icon" />
+									<img src={icon_ticket} alt="ticket icon" className="icon" />
 								</div>
 								<Button className="button">RETIRER UN TICKET</Button>
 							</Col>
 							<Col className='card'>
 								<div className='icon-container'>
-								<img src={icon_calendar} alt="calendar icon" className="icon" />
+									<img src={icon_calendar} alt="calendar icon" className="icon" />
 								</div>
-								<Button className="button">RENDEZ-VOUS</Button>
+								<a href='/Ticket'>
+									<Button className="button">RENDEZ-VOUS</Button>
+								</a>
 							</Col>
 						</Row>
 					</div>
 				</div>
-				<img src={logo_blue} alt="borne to be alive logo" className='footer-logo'/>
+				<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' />
 			</div >
 		)
 	}

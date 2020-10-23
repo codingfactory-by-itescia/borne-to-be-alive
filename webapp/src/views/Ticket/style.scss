@@ -1,1 +1,87 @@
-@import '../../assets/style/vars';
+@import "../../assets/style/vars";
+
+.App, .app-container {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: $color_primary;
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.back-button p {
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+.button {
+    width: 275px;
+    height: 60px;
+    color: #fff;
+    background-color: $color_primary;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+}
+
+.text-container {
+    text-align: center;
+    margin-top: 76px;
+}
+
+.text-container p {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.greetings {
+    font-size: 55px;
+}
+
+.number {
+    font-size: 24px;
+}
+
+p.info-number {
+    font-size: 64px;
+    margin-top: 10px;
+}
+
+p.info {
+    font-size: 36px;
+    margin-bottom: 36px;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    text-align: center;
+}
+
+.icon-container {
+    margin-bottom: 10px;
+    width: 275px;
+    height: 275px;
+    border: solid 2px #CBC3C3;
+    padding: 63px;
+}
+
+.footer-logo {
+    position: fixed;
+    right: 36px;
+    bottom: 36px;
+}
