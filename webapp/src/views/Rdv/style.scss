@@ -1,14 +1,19 @@
 @import "../../assets/style/vars";
 
-.ant-layout {
-    min-height: 100vh;
-    padding: 0;
-}
+.rdv {
+    .hours {
+        margin-top: auto;
 
-.ant-layout-sider {
-    background-color: $color-primary;
-}
+        .day {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 
-.ant-layout-content {
-    padding: 50px;
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+    }
 }
