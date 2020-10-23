@@ -102,7 +102,7 @@ export default class Rdv extends Component {
 									<CartesianGrid strokeDasharray="3 3" />
 									<XAxis dataKey="time" />
 									<YAxis />
-									<Legend content="Consultations" />
+									{/* <Legend content="Consultations" /> */}
 									<Bar dataKey="people" fill="#94DA73" />
 								</BarChart>
 							</TabPane>

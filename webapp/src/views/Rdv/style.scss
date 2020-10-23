@@ -16,4 +16,17 @@
         color: #fff;
         text-align: center;
     }
+
+    .ant-tabs-nav-list {
+        width: 100%;
+    }
+
+    .ant-tabs-tab {
+        width: calc(100% / 5);
+        text-align: center;
+    }
+
+    .ant-tabs-tab-btn {
+        width: 100%;
+    }
 }
