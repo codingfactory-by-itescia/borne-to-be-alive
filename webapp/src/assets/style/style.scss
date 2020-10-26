@@ -16,6 +16,7 @@ a {
         min-width: 350px !important;
         width: 350px !important;
         padding: 30px;
+        color: #fff;
 
         h2 {
             color: #fff;
@@ -25,7 +26,6 @@ a {
         }
 
         p, span {
-            color: #fff !important;
             font-size: 20px;
         }
     }
@@ -46,8 +46,15 @@ a {
     text-transform: uppercase;
     height: 60px !important;
     line-height: 60px !important;
-    color: #fff;
     background-color: $color_primary;
     font-weight: 600 !important;
     border-radius: 6px !important;
+
+    span {
+        color: $color-primary;
+    }
+}
+
+.ant-btn.ant-btn-primary {
+    color: #fff;
 }
