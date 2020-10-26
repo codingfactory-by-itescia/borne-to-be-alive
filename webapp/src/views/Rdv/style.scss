@@ -1,1 +1,32 @@
 @import "../../assets/style/vars";
+
+.rdv {
+    .hours {
+        margin-top: auto;
+
+        .day {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+    }
+
+    .ant-tabs-nav-list {
+        width: 100%;
+    }
+
+    .ant-tabs-tab {
+        width: calc(100% / 5);
+        text-align: center;
+    }
+
+    .ant-tabs-tab-btn {
+        width: 100%;
+    }
+}
