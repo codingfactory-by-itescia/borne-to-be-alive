@@ -1,13 +1,29 @@
 @import "../../assets/style/vars";
 
 .Medecin {
+    h1 {
+        text-align: center;
+        font-size: 36px;
+    }
+
     .patientItem {
-        background-color: $color_primary;
-        color: #FFF;
-        font-weight: 600;
-        margin-left: 15vw;
-        margin-right: 20vw;
-        margin-top: 5vh;
+        color: $color_primary;
+        border: 2px solid $color_primary;
+        margin-bottom: 15px;
+        border-radius: 3px;
+        width: 595px;
+        padding: 15px;
+
+        .title {
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .number {
+            margin-bottom: 0;
+            opacity: .7;
+        }
     }
 
     .ant-layout-sider {
@@ -16,6 +32,9 @@
         width: 100%;
         justify-content: center;
         font-size: 24px;
+        position: sticky;
+        height: 100vh;
+        top: 0;
 
         .ant-btn {
             margin-top: auto;

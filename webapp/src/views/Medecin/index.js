@@ -6,29 +6,61 @@ import React, { Component } from 'react'
 const { Content, Sider } = Layout;
 
 export default class Medecin extends Component {
+	state= {
+		tickets : [
+			{
+				id: 1,
+				name: "John Doe",
+				number: "29075120012278"
+			},
+			{
+				id: 2,
+				name: "Jane Doe",
+				number: "29075120012278"
+			},
+			{
+				id: 3,
+				name: "Do Doe",
+
+			},
+			{
+				id: 4,
+				name: "Harry Potter",
+				number: "29075120012278"
+			},
+			{
+				id: 5,
+				name: "Scott",
+
+			},
+			{
+				id: 5,
+				name: "Scott",
+
+			},
+			{
+				id: 5,
+				name: "Scott",
+
+			},
+			{
+				id: 5,
+				name: "Scott",
+
+			},
+		],
+	}
 	render() {
 		return (
 			<Layout className="Medecin">
 				<Content>
-				<p><b>Bonjour</b> Medecin</p>
-					<Row className="patientItem">
-						<Col span={12}>
-								<div>Test1</div>
-								<div>Test3</div>
-						</Col>
-						<Col span={12}>
-								Test2
-						</Col>
-					</Row>
-					<Row className="patientItem">
-						<Col span={12}>
-								<div>Test1</div>
-								<div>Test3</div>
-						</Col>
-						<Col span={12}>
-								Test2
-						</Col>
-					</Row>
+					<h1><b>Bonjour</b> Medecin</h1>
+					{this.state.tickets.map((ticket, index) => (
+						<div className="patientItem" key={index}>
+							<p className="title">n°{ticket.id} {ticket.name}</p>
+							{ticket.number && (<p className="number">{ticket.number}</p>)}
+						</div>
+					))}
 				</Content>
 				<Sider>
 					<h1>N°3</h1>
