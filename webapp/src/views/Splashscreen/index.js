@@ -16,7 +16,7 @@ export default class Splashscreen extends Component {
 				</section>
 				<section className="bottom">
 					<p>Insérez votre carte vitale pour vous identifier ou cliquez ici</p>
-					<div className="button"></div>
+					<div className="splash-button"></div>
 				</section>
 
 			</a>

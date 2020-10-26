@@ -1,7 +1,6 @@
 @import "./vars";
 @import "./fonts";
 
-
 a {
     text-decoration: none;
     color: inherit;
@@ -17,6 +16,7 @@ a {
         min-width: 350px !important;
         width: 350px !important;
         padding: 30px;
+        color: #fff;
 
         h2 {
             color: #fff;
@@ -26,7 +26,6 @@ a {
         }
 
         p, span {
-            color: #fff !important;
             font-size: 20px;
         }
     }
@@ -38,5 +37,24 @@ a {
 }
 
 .ant-layout-content {
-    padding: 50px;
+    padding: 16px;
+    display: grid;
+    place-content: center;
+}
+
+.ant-btn {
+    text-transform: uppercase;
+    height: 60px !important;
+    line-height: 60px !important;
+    background-color: $color_primary;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+
+    span {
+        color: $color-primary;
+    }
+}
+
+.ant-btn.ant-btn-primary {
+    color: #fff;
 }
