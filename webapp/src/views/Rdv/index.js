@@ -97,6 +97,7 @@ export default class Rdv extends Component {
 						<LeftOutlined />
 						<p>Accueil</p>
 					</a>
+					<h1>Horaires d'affluence</h1>
 					<p>Durée moyenne de la consultation <Text strong>20</Text>min</p>
 					<Tabs defaultActiveKey="1">
 						{this.state.data.map((item,key) => (
