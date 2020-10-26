@@ -1,7 +1,6 @@
 @import "./vars";
 @import "./fonts";
 
-
 a {
     text-decoration: none;
     color: inherit;
@@ -38,5 +37,17 @@ a {
 }
 
 .ant-layout-content {
-    padding: 50px;
+    padding: 16px;
+    display: grid;
+    place-content: center;
+}
+
+.ant-btn {
+    text-transform: uppercase;
+    height: 60px !important;
+    line-height: 60px !important;
+    color: #fff;
+    background-color: $color_primary;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
 }

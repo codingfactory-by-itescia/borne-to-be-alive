@@ -1,12 +1,13 @@
 import './style.scss';
 
+import { Button, Col, Layout, Row } from 'antd';
+import React, { Component } from 'react';
+
 import icon_calendar from '../../assets/img/icon_calendar.png';
 import icon_ticket from '../../assets/img/icon_ticket.png';
 import logo_blue from '../../assets/img/Logo_blue.png';
 
-import React, { Component } from 'react';
-import { Button, Row, Col } from 'antd';
-
+const {Content} = Layout;
 export default class Accueil extends Component {
 
 	constructor(props) {
@@ -24,7 +25,8 @@ export default class Accueil extends Component {
 	}
 	render() {
 		return (
-			<div className='app-container'>
+			<Layout>
+				<Content>
 				<div className='text-container'>
 					<p className='greetings'><b>Bonjour</b> Rachel Bonneaux</p>
 
@@ -42,21 +44,21 @@ export default class Accueil extends Component {
 								<div className='icon-container'>
 									<img src={icon_ticket} alt="ticket icon" className="icon" />
 								</div>
-								<Button onClick={this.disable} className={this.state.isDisabled ? 'button disabled' : 'button'}>IMPRIMER UN TICKET</Button>
+								<Button type="primary" style={{ width: "100%"}} href="/Ticket">Retirer un ticket</Button>
 							</Col>
 							<Col className='card'>
 								<div className='icon-container'>
 									<img src={icon_calendar} alt="calendar icon" className="icon" />
 								</div>
-								<a href='/Ticket'>
-									<Button className="button">RENDEZ-VOUS</Button>
-								</a>
+								<Button type="primary" style={{ width: "100%"}} href="/rdv">Rendez-vous</Button>
 							</Col>
 						</Row>
 					</div>
 				</div>
 				<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' />
-			</div >
+
+				</Content>
+			</Layout >
 		)
 	}
 }

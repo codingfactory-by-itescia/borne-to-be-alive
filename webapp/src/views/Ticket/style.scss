@@ -9,40 +9,25 @@
 
 .back-button {
     position: fixed;
-    top: 10px;
-    left: 10px;
     color: $color_primary;
     font-weight: bold;
     font-size: 25px;
     display: flex;
     align-items: center;
-}
+    margin-bottom: 20px;
 
-.back-button p {
-    margin-bottom: 0px;
-    margin-left: 10px;
-}
-
-.button {
-    width: 275px;
-    height: 60px;
-    color: #fff;
-    background-color: $color_primary;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: 600;
+    p {
+        margin-bottom: 0px;
+        margin-left: 10px;
+    }
 }
 
 .text-container {
     text-align: center;
-    margin-top: 76px;
-}
 
-.text-container p {
-    width: 600px;
-    margin: 0 auto;
+    p {
+        margin-bottom: 15px;
+    }
 }
 
 .hidden {
@@ -59,12 +44,6 @@
 
 p.info-number {
     font-size: 64px;
-    margin-top: 10px;
-}
-
-p.info {
-    font-size: 36px;
-    margin-bottom: 36px;
 }
 
 .container {
@@ -98,17 +77,5 @@ p.info {
 .phone-input {
     border-radius: 10px;
     border: solid 4px #CBC3C3;
-}
-
-.phone-button {
-    background-color: $color_primary;
-    color: #fff;
-    margin-top: 12px;
-    border-radius: 5px;
-}
-
-.button.disabled {
-    background-color: #E5E5E5;
-    color: #fff;
-    border: none;
+    margin-bottom: 15px;
 }

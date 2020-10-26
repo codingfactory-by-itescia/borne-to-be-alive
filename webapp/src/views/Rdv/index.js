@@ -4,12 +4,13 @@ import {
 	Bar,
 	BarChart,
 	CartesianGrid,
-	Legend,
 	XAxis,
 	YAxis,
 } from 'recharts';
 import { DatePicker, Layout, Tabs, TimePicker, Typography, } from 'antd';
 import React,{ Component } from 'react'
+
+import { LeftOutlined } from '@ant-design/icons';
 
 const { TabPane } = Tabs;
 const { Text,Link } = Typography;
@@ -92,7 +93,10 @@ export default class Rdv extends Component {
 		return (
 			<Layout className="rdv">
 				<Content>
-					<span>Accueil</span>
+					<a href='/Accueil' className='back-button'>
+						<LeftOutlined />
+						<p>Accueil</p>
+					</a>
 					<p>Durée moyenne de la consultation <Text strong>20</Text>min</p>
 					<Tabs defaultActiveKey="1">
 						{this.state.data.map((item,key) => (

@@ -1,13 +1,14 @@
 import './style.scss';
 
-import icon_ticket from '../../assets/img/icon_ticket.png';
+import { Button, Col, Input, Layout, Row } from 'antd';
+import React, { Component } from 'react';
+
+import { LeftOutlined } from '@ant-design/icons';
 import icon_mobile from '../../assets/img/icon_mobile.png';
+import icon_ticket from '../../assets/img/icon_ticket.png';
 import logo_blue from '../../assets/img/Logo_blue.png';
 
-import React, { Component } from 'react';
-import { Button, Row, Col, Input } from 'antd';
-import { LeftOutlined } from '@ant-design/icons';
-
+const { Content } = Layout;
 export default class Ticket extends Component {
 
 	constructor(props) {
@@ -16,26 +17,23 @@ export default class Ticket extends Component {
 			shouldHide: true,
 			isDisabled: false
 		}
-
-		this.onClick = this.onClick.bind(this);
-		this.disable = this.disable.bind(this);
 	}
 
-	onClick() {
+	onClick = ()=> {
 		this.setState({
 			shouldHide: false
 		});
 	}
 
-	disable() {
-		this.setState({
-			isDisabled: true
-		})
+	toggleDisable = () => {
+		this.setState({ isDisabled: true })
 	}
+
 
 	render() {
 		return (
-			<div className='app-container'>
+			<Layout>
+				<Content>
 				<a href='/Accueil' className='back-button'>
 					<LeftOutlined />
 					<p>Accueil</p>
@@ -58,24 +56,26 @@ export default class Ticket extends Component {
 								<div className='icon-container'>
 									<img src={icon_mobile} alt="mobile icon" className="icon" />
 								</div>
-								<Button onClick={this.onClick} className="button">SMS</Button>
+								<Button onClick={this.onClick} type="primary" style={{ width: "100%" }}>Recevoir par SMS</Button>
 							</Col>
 							<Col className='card'>
 								<div className='icon-container'>
 									<img src={icon_ticket} alt="calendar icon" className="icon" />
 								</div>
-								<Button onClick={this.disable} className={this.state.isDisabled ? 'button disabled' : 'button'}>IMPRIMER UN TICKET</Button>
+								<Button onClick={this.toggleDisable} disabled={this.state.isDisabled} type="primary" style={{width: "100%"}}>Imprimer votre ticket</Button>
 							</Col>
 						</Row>
 					</div>
 
 					<div className={this.state.shouldHide ? 'hidden' : 'container'}>
 						<Input className='phone-input' placeholder="Numéro de portable" />
-						<Button className="phone-button">Envoyer</Button>
+						<Button type="primary" style={{width: "100%"}}>Envoyer</Button>
 					</div>
 				</div>
 				<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' />
-			</div >
+
+				</Content>
+			</Layout >
 		)
 	}
 }

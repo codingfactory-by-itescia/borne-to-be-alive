@@ -7,35 +7,6 @@
     top: 0;
 }
 
-.button {
-    width: 275px;
-    height: 60px;
-    color: #fff;
-    background-color: $color_primary;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 5px;
-}
-
-.button.disabled {
-    background-color: #E5E5E5;
-    color: #fff;
-    border: none;
-}
-
-.text-container {
-    text-align: center;
-    margin-top: 76px;
-}
-
-.text-container p {
-    width: 600px;
-    margin: 0 auto;
-}
-
 .greetings {
     font-size: 55px;
 }
@@ -47,7 +18,7 @@
 p.info {
     font-size: 36px;
     margin-top: 10px;
-    margin-bottom: 72px;
+    margin-bottom: 50px;
 }
 
 .container {
