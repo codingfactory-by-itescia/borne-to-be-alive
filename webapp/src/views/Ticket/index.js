@@ -2,6 +2,8 @@ import './style.scss';
 
 import { Button, Col, Input, Layout, Row } from 'antd';
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { debounce } from 'lodash';
 
 import { LeftOutlined } from '@ant-design/icons';
 import icon_mobile from '../../assets/img/icon_mobile.png';
@@ -15,22 +17,36 @@ export default class Ticket extends Component {
 		super(props);
 		this.state = {
 			shouldHide: true,
-			isDisabled: false
+			isDisabled: false,
+			redirect: false
 		}
+		this.handleInputThrottled = debounce(this.toggleRedirect, 30000);
+	}
+
+	componentDidMount() {
+		this.handleInputThrottled();
 	}
 
 	onClick = ()=> {
+		this.handleInputThrottled();
 		this.setState({
 			shouldHide: false
 		});
 	}
 
+	toggleRedirect () {
+		this.setState({redirect: true});
+	}
+
 	toggleDisable = () => {
-		this.setState({ isDisabled: true })
+		this.setState({ isDisabled: true });
 	}
 
 
 	render() {
+		if (this.state.redirect) {
+			return <Redirect push to="/" />
+		}
 		return (
 			<Layout>
 				<Content>
@@ -68,7 +84,7 @@ export default class Ticket extends Component {
 					</div>
 
 					<div className={this.state.shouldHide ? 'hidden' : 'container'}>
-						<Input className='phone-input' placeholder="Numéro de portable" />
+						<Input className='phone-input' placeholder="Numéro de portable" onChange={this.handleInputThrottled.bind(this)}/>
 						<Button type="primary" style={{width: "100%"}}>Envoyer</Button>
 					</div>
 				</div>

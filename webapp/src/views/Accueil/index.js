@@ -2,6 +2,7 @@ import './style.scss';
 
 import { Button, Col, Layout, Row } from 'antd';
 import React,{ Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import icon_calendar from '../../assets/img/icon_calendar.png';
 import icon_ticket from '../../assets/img/icon_ticket.png';
@@ -18,8 +19,15 @@ export default class Accueil extends Component {
 				name: "Rachel Bonneaux",
 				id: "290751211221474"
 			},
+			redirect: false,
 		}
 		this.disable = this.disable.bind(this);
+	}
+
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({redirect: true})
+		}, 30000 )
 	}
 
 	disable() {
@@ -29,6 +37,9 @@ export default class Accueil extends Component {
 	}
 	render() {
 		const { user } = this.state;
+		if (this.state.redirect) {
+			return <Redirect push to="/" />
+		}
 		return (
 			<Layout>
 				<Content>
