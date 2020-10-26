@@ -1,7 +1,9 @@
 # compiled output
 /dist
+/lib
 /node_modules
 src/dist/
+accountService.json
 
 # Logs
 logs

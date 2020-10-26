@@ -8,7 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TicketService = void 0;
 const common_1 = require("@nestjs/common");
+const fireorm_1 = require("fireorm");
+const ticket_model_1 = require("./dto/ticket.model");
 let TicketService = class TicketService {
+    async createTicket(createTicketDto) {
+        const ticket = new ticket_model_1.Ticket();
+        const snapshot = await this.findAllTickets();
+        ticket.id = (snapshot.length + 1).toString();
+        ticket.name = createTicketDto.name;
+        ticket.surname = createTicketDto.surname;
+        ticket.vitalId = createTicketDto.vitalId;
+        ticket.phone = createTicketDto.phoneNumber;
+        ticket.status = ticket_model_1.TicketStatus.OPEN;
+        return fireorm_1.getRepository(ticket_model_1.Ticket).create(ticket);
+    }
+    async findAllTickets() {
+        return fireorm_1.getRepository(ticket_model_1.Ticket).find();
+    }
+    async findOneTicket(id) {
+        return fireorm_1.getRepository(ticket_model_1.Ticket).findById(id);
+    }
 };
 TicketService = __decorate([
     common_1.Injectable()

@@ -1782,7 +1782,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "d387feb8de15b3702c740634265adbd7383b9429c6ea970fdefdacdb1b591a80",
+        "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
         "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
         "affectsGlobalScope": false
       },
@@ -1791,24 +1791,154 @@
         "signature": "2130528ae32d4d1f7c8f4c6a502ea2749873ea4de3898dfa0585c9bc1f0cb1ad",
         "affectsGlobalScope": false
       },
-      "../src/ticket/dto/listalltickets.dto.ts": {
-        "version": "0bef11675eb3a9c36ea1e901f0fbb91b1c2b08e45df64ccaaf3e7515c810da83",
-        "signature": "3ef6ada48db800fb158fb6f76af426d4f44c4e00312f92a9c024f99b5cad73f2",
+      "../src/ticket/dto/index.ts": {
+        "version": "eebb0427f2a9a7b720ae2ce27554bbe6abd4bde2a8a7dea897a6113bea4845d2",
+        "signature": "6b24ee7a6e8494248771a7a88987482fca1e156af234de770b9e50ca848ef9bc",
         "affectsGlobalScope": false
       },
-      "../src/ticket/dto/index.dto.ts": {
-        "version": "2c42debc205d57e5fadaad0bdc4229006d046a6ce1299aae562430355eab162f",
-        "signature": "1a75de212266949246bc156f442560a791e1c92169e76c6517b54bbdadf34900",
+      "../node_modules/@google-cloud/firestore/types/firestore.d.ts": {
+        "version": "a480ffca2b11ffdcdf984aa07040cec84d0b6aa347e604624b07028431a719fa",
+        "signature": "a480ffca2b11ffdcdf984aa07040cec84d0b6aa347e604624b07028431a719fa",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/fireorm/lib/src/types.d.ts": {
+        "version": "3c3ec94501ec5098e785f8674e8fe0269a81cfd2cded31bac5ae733b372a4802",
+        "signature": "3c3ec94501ec5098e785f8674e8fe0269a81cfd2cded31bac5ae733b372a4802",
         "affectsGlobalScope": false
       },
-      "../src/ticket/ticket.controller.ts": {
-        "version": "924aa9215ed1a64c5d0fa576f6ddc602331d47d3157043938c0337964a5f7875",
-        "signature": "2f0d2c354db647278e7bd087d55b3d30b1cb8568ef8fe415df68bf5f4b38432c",
+      "../node_modules/fireorm/lib/src/decorators/collection.d.ts": {
+        "version": "839c7fc3eaaf9bd04a6bd09e523ecfb2ca8682ccf009270a4adf65b10b3de3b4",
+        "signature": "839c7fc3eaaf9bd04a6bd09e523ecfb2ca8682ccf009270a4adf65b10b3de3b4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/baserepository.d.ts": {
+        "version": "fa6f6989dfc2c0e5991eaad260878842c37c11daa93481bcab22b9cb75ccd0dd",
+        "signature": "fa6f6989dfc2c0e5991eaad260878842c37c11daa93481bcab22b9cb75ccd0dd",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/decorators/customrepository.d.ts": {
+        "version": "4f7c1b3455c3a1fe19bc6f3fee17b80fa003c03858232e9918fac6c3521ad4db",
+        "signature": "4f7c1b3455c3a1fe19bc6f3fee17b80fa003c03858232e9918fac6c3521ad4db",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/decorators/subcollection.d.ts": {
+        "version": "0aecec5c93caadc634c2c868e8259118dc16fba8aff623ab5f0b4f8204166609",
+        "signature": "0aecec5c93caadc634c2c868e8259118dc16fba8aff623ab5f0b4f8204166609",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/decorators/index.d.ts": {
+        "version": "2185801c30e5474971330f258632ae73118be5a0eb9844879e59809d273bbbcc",
+        "signature": "2185801c30e5474971330f258632ae73118be5a0eb9844879e59809d273bbbcc",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/errors/validationerror.d.ts": {
+        "version": "dcac24e45e0d62d984bf57cb8cd8639ad577a3999f035d742dcea745e2790ed8",
+        "signature": "dcac24e45e0d62d984bf57cb8cd8639ad577a3999f035d742dcea745e2790ed8",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/metadatastorage.d.ts": {
+        "version": "e122b8b514ceb6b13cf694fb7fe6fb496eca6d141bf55f4ed8f99451df3f374f",
+        "signature": "e122b8b514ceb6b13cf694fb7fe6fb496eca6d141bf55f4ed8f99451df3f374f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts": {
+        "version": "2ad5ec42ce0687b0b2654dfc188a4e9875fea4c935a59c27f174cd2b1ea87c19",
+        "signature": "2ad5ec42ce0687b0b2654dfc188a4e9875fea4c935a59c27f174cd2b1ea87c19",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts": {
+        "version": "ca5ce376a7a62ea0fd19bdf9b42e9b9738d389579103cd9f113d6f81aab21805",
+        "signature": "ca5ce376a7a62ea0fd19bdf9b42e9b9738d389579103cd9f113d6f81aab21805",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/batch/firestorebatchunit.d.ts": {
+        "version": "8e66fd724d33aba1f8afcfd20e256ac1683fb1b75d0061a5c8fbe695c71227ce",
+        "signature": "8e66fd724d33aba1f8afcfd20e256ac1683fb1b75d0061a5c8fbe695c71227ce",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts": {
+        "version": "efc0451000679083e9ee8913489111864d78768880394528888015a793f9adad",
+        "signature": "efc0451000679083e9ee8913489111864d78768880394528888015a793f9adad",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts": {
+        "version": "47ee4168e54d7fe2046ff2ecb52de4445030399639a1af1a2163c6ace437641c",
+        "signature": "47ee4168e54d7fe2046ff2ecb52de4445030399639a1af1a2163c6ace437641c",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts": {
+        "version": "a3a2b4cec6e551ad5f2a25efaa5d5eb204f17d967c81820da16a76e9c318ff2d",
+        "signature": "a3a2b4cec6e551ad5f2a25efaa5d5eb204f17d967c81820da16a76e9c318ff2d",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/transaction/firestoretransaction.d.ts": {
+        "version": "c32ea287ea13ee8618f7a58c75b30f260042180a4f34b1f2e6aea4fb32b0735b",
+        "signature": "c32ea287ea13ee8618f7a58c75b30f260042180a4f34b1f2e6aea4fb32b0735b",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/batch/firestorebatch.d.ts": {
+        "version": "a6babc18c26b5ddd6f338958b12b4ca1356e04b1a6ec979e5b64a61070831beb",
+        "signature": "a6babc18c26b5ddd6f338958b12b4ca1356e04b1a6ec979e5b64a61070831beb",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/helpers.d.ts": {
+        "version": "0a4ea9383f699cafad470f2983237d8e46c1d59686d5509f30ebee58991e7ccc",
+        "signature": "0a4ea9383f699cafad470f2983237d8e46c1d59686d5509f30ebee58991e7ccc",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts": {
+        "version": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b",
+        "signature": "d89af0c250e1424959162beae79f2c2745c729d6ab8028503d322395d96d3a2b",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/classtransformer.d.ts": {
+        "version": "96589ead67dc132731ddb531c3c7de2e66156df7154b1136d1abd92bdaa27e79",
+        "signature": "96589ead67dc132731ddb531c3c7de2e66156df7154b1136d1abd92bdaa27e79",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts": {
+        "version": "1aed251ab92dfd0e4901b3b9ad5eccdeb4d3603d57af947ae5f1de967f5ffa6e",
+        "signature": "1aed251ab92dfd0e4901b3b9ad5eccdeb4d3603d57af947ae5f1de967f5ffa6e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/metadata/typemetadata.d.ts": {
+        "version": "fc14f591b59444c787440f6d8d4df6d96a2eafd8dcb8f3d9773d2d52a88db64f",
+        "signature": "fc14f591b59444c787440f6d8d4df6d96a2eafd8dcb8f3d9773d2d52a88db64f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/transformoperationexecutor.d.ts": {
+        "version": "1fa98f06f8163fef61071f77e47ad2b7dd26064a43e219a4468df563e911caf3",
+        "signature": "1fa98f06f8163fef61071f77e47ad2b7dd26064a43e219a4468df563e911caf3",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/decorators.d.ts": {
+        "version": "cc8aa0870a0defda3818676ecb8123b2d8b15dc40cdc130834bc81b01a58f2e4",
+        "signature": "cc8aa0870a0defda3818676ecb8123b2d8b15dc40cdc130834bc81b01a58f2e4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/node_modules/class-transformer/index.d.ts": {
+        "version": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b",
+        "signature": "097d4bf3331df1e138ffdcf92e1117f6841bc8337170d927fd955d5ee8a1674b",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/fireorm/lib/src/index.d.ts": {
+        "version": "9df0f876f7145a93422964128f33de7dc520871ba4358807818f91059d8cf477",
+        "signature": "9df0f876f7145a93422964128f33de7dc520871ba4358807818f91059d8cf477",
+        "affectsGlobalScope": false
+      },
+      "../src/ticket/dto/ticket.model.ts": {
+        "version": "0ccbdf4679dd672f7aa641c253bcc43430d0c0dfc5eb9b17c8ba0c0cc2c34706",
+        "signature": "5f50d63b1c88c9625ba05f596859a327c6b64e338f7c986e63082e5d256484df",
         "affectsGlobalScope": false
       },
       "../src/ticket/ticket.service.ts": {
-        "version": "915712ad2d9e9653474af28aec5200e53549499199d8be86b98a4c83d61e7840",
-        "signature": "f484373daa5bac175c3ba2d18369f5e2d9c223bae0ae5b2c6cc2d9f659572f35",
+        "version": "ab4afac4e367f4c6450b4ecd500a5cde321d461f513877d6480f122cc00e6d7e",
+        "signature": "c9ba636658a03c77ae1cfe9e4413e1db6c6386b6ebc8e12dfb0e1a0759e40d06",
+        "affectsGlobalScope": false
+      },
+      "../src/ticket/ticket.controller.ts": {
+        "version": "6917d66750ca56a643e45a70aca8127417bc47389cd351c3c4dea758fac658fd",
+        "signature": "3ba0a81c1d5a5e6715eb52df741be6967ae3d068f96f1734dc4ea10ed70693af",
         "affectsGlobalScope": false
       },
       "../src/ticket/ticket.module.ts": {
@@ -1817,7 +1947,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "45df8bb19ad1f969493b7427b8327adab7116b7fc9366fb7addc8c694e5289bf",
+        "version": "16fbb8fcb978978edd99d4cc069f2e9a7a87a5d1b2eece22b11dce353314be59",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -2556,11 +2686,6 @@
         "signature": "230f2776b970caf8e470648d09f4bf01d6cf1612d6aadef4d4783343a8b5c7b7",
         "affectsGlobalScope": false
       },
-      "../node_modules/@google-cloud/firestore/types/firestore.d.ts": {
-        "version": "a480ffca2b11ffdcdf984aa07040cec84d0b6aa347e604624b07028431a719fa",
-        "signature": "a480ffca2b11ffdcdf984aa07040cec84d0b6aa347e604624b07028431a719fa",
-        "affectsGlobalScope": true
-      },
       "../node_modules/firebase-admin/lib/auth.d.ts": {
         "version": "5eaa0c8f380a53d17fc513a5a92ccf91c8192ce925d018ecc240575e43efe5cc",
         "signature": "5eaa0c8f380a53d17fc513a5a92ccf91c8192ce925d018ecc240575e43efe5cc",
@@ -2876,8 +3001,13 @@
         "signature": "5330493098e0521a330cef4377a62f045155cacab3fbe0d3ecf7fa213e614fcd",
         "affectsGlobalScope": false
       },
+      "../src/accountservice.json": {
+        "version": "2a4fe915fe988496439f46c7ba69565d23b00607c66fb8a1f6f15b231d26c2a1",
+        "signature": "e8590ec0bc07903fd6e0475502282439d0659f8e7b0c09ab9b17fc6bf37baf40",
+        "affectsGlobalScope": true
+      },
       "../src/main.ts": {
-        "version": "c776b037a597dce6aad8bfe6d428d240f49b149ba5eab98abd11b9ae221dcda8",
+        "version": "edc9634495d7e25133045d04dc0df07ef6a484579b418d99b36e977ff0883e69",
         "signature": "78a8528eacd5bbf10e45bba1c62a19eaa4249f44d67fd393a9d98b93dd4466e7",
         "affectsGlobalScope": false
       },
@@ -3159,6 +3289,12 @@
       "outDir": "./",
       "baseUrl": "..",
       "incremental": true,
+      "resolveJsonModule": true,
+      "paths": {
+        "@ticket/*": [
+          "src/ticket/*"
+        ]
+      },
       "configFilePath": "../tsconfig.build.json"
     },
     "referencedMap": {
@@ -4995,6 +5131,109 @@
         "../node_modules/@types/express-serve-static-core/index.d.ts",
         "../node_modules/@types/serve-static/index.d.ts"
       ],
+      "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/baserepository.d.ts",
+        "../node_modules/fireorm/lib/src/errors/validationerror.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts": [
+        "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts",
+        "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts",
+        "../node_modules/reflect-metadata/index.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatchunit.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/firestorebatch.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts": [
+        "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/firestorebatchunit.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/errors/validationerror.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/collection.d.ts": [
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/customrepository.d.ts": [
+        "../node_modules/fireorm/lib/src/baserepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/index.d.ts": [
+        "../node_modules/fireorm/lib/src/decorators/collection.d.ts",
+        "../node_modules/fireorm/lib/src/decorators/customrepository.d.ts",
+        "../node_modules/fireorm/lib/src/decorators/subcollection.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/subcollection.d.ts": [
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/helpers.d.ts": [
+        "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatch.d.ts",
+        "../node_modules/fireorm/lib/src/transaction/firestoretransaction.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/index.d.ts": [
+        "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/decorators/index.d.ts",
+        "../node_modules/fireorm/lib/src/helpers.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/index.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/metadatastorage.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/transaction/firestoretransaction.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/types.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/classtransformer.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/decorators.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/transformoperationexecutor.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/index.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformer.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/decorators.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/metadata/typemetadata.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/transformoperationexecutor.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/typemetadata.d.ts"
+      ],
       "../node_modules/gaxios/build/src/common.d.ts": [
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts",
@@ -5426,18 +5665,23 @@
         "../node_modules/@types/express/index.d.ts",
         "../node_modules/firebase-admin/lib/index.d.ts",
         "../node_modules/firebase-functions/lib/index.d.ts",
+        "../node_modules/fireorm/lib/src/index.d.ts",
+        "../src/accountservice.json",
         "../src/app.module.ts"
       ],
       "../src/ticket/dto/createticket.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
-      "../src/ticket/dto/index.dto.ts": [
-        "../src/ticket/dto/createticket.dto.ts",
-        "../src/ticket/dto/listalltickets.dto.ts"
+      "../src/ticket/dto/index.ts": [
+        "../src/ticket/dto/createticket.dto.ts"
+      ],
+      "../src/ticket/dto/ticket.model.ts": [
+        "../node_modules/fireorm/lib/src/index.d.ts"
       ],
       "../src/ticket/ticket.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/ticket/dto/index.dto.ts"
+        "../src/ticket/dto/index.ts",
+        "../src/ticket/ticket.service.ts"
       ],
       "../src/ticket/ticket.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -5445,7 +5689,10 @@
         "../src/ticket/ticket.service.ts"
       ],
       "../src/ticket/ticket.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/fireorm/lib/src/index.d.ts",
+        "../src/ticket/dto/index.ts",
+        "../src/ticket/dto/ticket.model.ts"
       ],
       "../src/validationpipeoptions.ts": [
         "../node_modules/class-validator/types/index.d.ts"
@@ -7285,6 +7532,109 @@
         "../node_modules/@types/express-serve-static-core/index.d.ts",
         "../node_modules/@types/serve-static/index.d.ts"
       ],
+      "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/baserepository.d.ts",
+        "../node_modules/fireorm/lib/src/errors/validationerror.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts": [
+        "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts",
+        "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts",
+        "../node_modules/reflect-metadata/index.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatchunit.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/firestorebatch.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/firestorebatchsinglerepository.d.ts": [
+        "../node_modules/fireorm/lib/src/batch/basefirestorebatchrepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/batch/firestorebatchunit.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/errors/validationerror.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/collection.d.ts": [
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/customrepository.d.ts": [
+        "../node_modules/fireorm/lib/src/baserepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/index.d.ts": [
+        "../node_modules/fireorm/lib/src/decorators/collection.d.ts",
+        "../node_modules/fireorm/lib/src/decorators/customrepository.d.ts",
+        "../node_modules/fireorm/lib/src/decorators/subcollection.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/decorators/subcollection.d.ts": [
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/helpers.d.ts": [
+        "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/batch/firestorebatch.d.ts",
+        "../node_modules/fireorm/lib/src/transaction/firestoretransaction.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/index.d.ts": [
+        "../node_modules/fireorm/lib/src/basefirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/decorators/index.d.ts",
+        "../node_modules/fireorm/lib/src/helpers.d.ts",
+        "../node_modules/fireorm/lib/src/metadatastorage.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/index.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/metadatastorage.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/abstractfirestorerepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/transaction/firestoretransaction.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts",
+        "../node_modules/fireorm/lib/src/transaction/basefirestoretransactionrepository.d.ts",
+        "../node_modules/fireorm/lib/src/types.d.ts"
+      ],
+      "../node_modules/fireorm/lib/src/types.d.ts": [
+        "../node_modules/@google-cloud/firestore/types/firestore.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/classtransformer.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/decorators.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/transformoperationexecutor.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/index.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformer.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/decorators.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/metadata/typemetadata.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/exposeexcludeoptions.d.ts"
+      ],
+      "../node_modules/fireorm/node_modules/class-transformer/transformoperationexecutor.d.ts": [
+        "../node_modules/fireorm/node_modules/class-transformer/classtransformoptions.d.ts",
+        "../node_modules/fireorm/node_modules/class-transformer/metadata/typemetadata.d.ts"
+      ],
       "../node_modules/gaxios/build/src/common.d.ts": [
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts",
@@ -7702,12 +8052,17 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/firebase-functions/lib/index.d.ts"
       ],
-      "../src/ticket/dto/index.dto.ts": [
-        "../src/ticket/dto/createticket.dto.ts",
-        "../src/ticket/dto/listalltickets.dto.ts"
+      "../src/ticket/dto/index.ts": [
+        "../src/ticket/dto/createticket.dto.ts"
       ],
       "../src/ticket/ticket.controller.ts": [
-        "../src/ticket/dto/index.dto.ts"
+        "../src/ticket/dto/index.ts",
+        "../src/ticket/dto/ticket.model.ts",
+        "../src/ticket/ticket.service.ts"
+      ],
+      "../src/ticket/ticket.service.ts": [
+        "../src/ticket/dto/index.ts",
+        "../src/ticket/dto/ticket.model.ts"
       ],
       "../src/validationpipeoptions.ts": [
         "../node_modules/class-validator/types/index.d.ts"

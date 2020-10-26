@@ -6,6 +6,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as express from 'express'
 import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
+import * as fireorm from 'fireorm';
+import * as serviceAccount from './accountService.json'
 
 const server = express()
 
@@ -21,11 +23,18 @@ export const createNestServer = async (expressInstance) =>{
     .setTitle('Born to be alive')
     .setDescription('Api du projet')
     .setVersion('1.0')
-    .addTag('borne')
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('doc', app, document);
+
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
+    databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`,
+  });
+
+  const firestore = admin.firestore();
+  fireorm.initialize(firestore);
 
   return app.init();
 }

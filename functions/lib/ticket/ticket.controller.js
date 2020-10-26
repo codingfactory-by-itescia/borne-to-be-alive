@@ -14,30 +14,33 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TicketController = void 0;
 const common_1 = require("@nestjs/common");
-const index_dto_1 = require("./dto/index.dto");
+const dto_1 = require("./dto");
+const ticket_service_1 = require("./ticket.service");
 let TicketController = class TicketController {
-    create(createTicketDto) {
-        return 'This action adds a new cat';
+    constructor(ticketService) {
+        this.ticketService = ticketService;
     }
-    findAllTickets(query) {
-        return 'test';
+    create(createTicketDto) {
+        return this.ticketService.createTicket(createTicketDto);
+    }
+    findAllTickets() {
+        return this.ticketService.findAllTickets();
     }
     findTicket(id) {
-        return `You search ticket id : ${id}`;
+        return this.ticketService.findOneTicket(id);
     }
 };
 __decorate([
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [index_dto_1.CreateTicketDto]),
+    __metadata("design:paramtypes", [dto_1.CreateTicketDto]),
     __metadata("design:returntype", void 0)
 ], TicketController.prototype, "create", null);
 __decorate([
     common_1.Get(),
-    __param(0, common_1.Query()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [index_dto_1.ListAllTicketsDto]),
+    __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], TicketController.prototype, "findAllTickets", null);
 __decorate([
@@ -48,7 +51,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TicketController.prototype, "findTicket", null);
 TicketController = __decorate([
-    common_1.Controller('ticket')
+    common_1.Controller('ticket'),
+    __metadata("design:paramtypes", [ticket_service_1.TicketService])
 ], TicketController);
 exports.TicketController = TicketController;
 //# sourceMappingURL=ticket.controller.js.map
