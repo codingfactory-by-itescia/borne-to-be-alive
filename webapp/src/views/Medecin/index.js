@@ -1,6 +1,6 @@
 import './style.scss';
 
-import { Button, Col, Layout, Row } from 'antd';
+import { Button, Layout } from 'antd';
 import React, { Component } from 'react'
 
 const { Content, Sider } = Layout;

@@ -13,7 +13,7 @@ import React,{ Component } from 'react'
 import { LeftOutlined } from '@ant-design/icons';
 
 const { TabPane } = Tabs;
-const { Text,Link } = Typography;
+const { Text } = Typography;
 const { Sider,Content } = Layout;
 
 export default class Rdv extends Component {
