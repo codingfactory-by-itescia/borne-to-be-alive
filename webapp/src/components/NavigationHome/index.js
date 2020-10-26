@@ -4,14 +4,17 @@ import React from 'react'
 import icon_calendar from '../../assets/img/icon_calendar.png';
 import icon_ticket from '../../assets/img/icon_ticket.png';
 
-export default function NavigationHome() {
+export default function NavigationHome({toggle}) {
+	const click = () => {
+		toggle("Ticket")
+	}
 	return (
 		<Row gutter={[16,24]} justify="center">
 			<Col className='card'>
 				<div className='icon-container'>
 					<img src={icon_ticket} alt="ticket icon" className="icon" />
 				</div>
-				<Button type="primary" style={{ width: "100%" }} href="/Ticket">Retirer un ticket</Button>
+				<Button type="primary" style={{ width: "100%" }}onClick={click}>Retirer un ticket</Button>
 			</Col>
 			<Col className='card'>
 				<div className='icon-container'>

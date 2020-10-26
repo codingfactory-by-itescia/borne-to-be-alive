@@ -17,10 +17,8 @@ export default class Ticket extends Component {
 		}
 	}
 
-	onClick = () => {
-		this.setState({
-			shouldHide: false
-		});
+	click = () => {
+		this.props.toggle("Sms")
 	}
 
 	toggleDisable = () => {
@@ -43,13 +41,12 @@ export default class Ticket extends Component {
 	render() {
 		return (
 
-
 			<Row gutter={[16,24]} justify="center">
 						<Col className='card'>
 							<div className='icon-container'>
 								<img src={icon_mobile} alt="mobile icon" className="icon" />
 							</div>
-							<Button onClick={this.onClick} type="primary" style={{ width: "100%" }}>Recevoir par SMS</Button>
+							<Button onClick={this.click} type="primary" style={{ width: "100%" }}>Recevoir par SMS</Button>
 						</Col>
 						<Col className='card'>
 							<div className='icon-container'>

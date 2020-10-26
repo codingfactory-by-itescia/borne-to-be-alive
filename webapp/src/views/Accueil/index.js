@@ -19,11 +19,28 @@ export default class Accueil extends Component {
 				name: "Rachel Bonneaux",
 				id: "290751211221474"
 			},
+			showTicket : false,
+			showSms: false,
+			showHome: true
+		}
+	}
+
+	toggleComponent = (item) => {
+		if (item === "Ticket") {
+			this.setState({
+				showTicket: !this.state.showTicket,
+				showHome: !this.state.showHome
+			})
+		} else if (item === "Sms") {
+			this.setState({
+				showSms: !this.state.showSms,
+				showTicket: !this.state.showTicket,
+			})
 		}
 	}
 
 	render() {
-		const { user } = this.state;
+		const { user, showHome, showSms, showTicket } = this.state;
 		return (
 			<Layout>
 				<Content>
@@ -35,11 +52,10 @@ export default class Accueil extends Component {
 							<p>Il y a <b>2</b> personnes avant vous. Votre temps d'attente est estimé à <b>1h</b></p>
 						</div>
 					</div>
-<NavigationHome/>
-							<Ticket/>
-							<Sms/>
-
-					<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' />
+					{showHome && (<NavigationHome toggle={this.toggleComponent}/>)}
+					{showTicket && (<Ticket user={this.state.user} toggle={this.toggleComponent}/>)}
+					{showSms && (<Sms user={this.state.user} toggle={this.toggleComponent}/>)}
+					<a href="/Accueil"><img src={logo_blue} alt="borne to be alive logo" className='footer-logo' /></a>
 				</Content>
 			</Layout >
 		)
