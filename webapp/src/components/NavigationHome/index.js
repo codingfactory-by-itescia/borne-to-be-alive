@@ -10,17 +10,19 @@ export default function NavigationHome({toggle}) {
 	}
 	return (
 		<Row gutter={[16,24]} justify="center">
-			<Col className='card'>
+			<Col className='card' onClick={click}>
 				<div className='icon-container'>
 					<img src={icon_ticket} alt="ticket icon" className="icon" />
 				</div>
 				<Button type="primary" style={{ width: "100%" }}onClick={click}>Retirer un ticket</Button>
 			</Col>
 			<Col className='card'>
+				<a href="/rdv">
 				<div className='icon-container'>
 					<img src={icon_calendar} alt="calendar icon" className="icon" />
 				</div>
 				<Button type="primary" style={{ width: "100%" }} href="/rdv">Rendez-vous</Button>
+				</a>
 			</Col>
 		</Row>
 	)

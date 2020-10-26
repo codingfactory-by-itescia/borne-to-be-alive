@@ -42,13 +42,13 @@ export default class Ticket extends Component {
 		return (
 
 			<Row gutter={[16,24]} justify="center">
-						<Col className='card'>
+				<Col className='card' onClick={this.click}>
 							<div className='icon-container'>
 								<img src={icon_mobile} alt="mobile icon" className="icon" />
 							</div>
 							<Button onClick={this.click} type="primary" style={{ width: "100%" }}>Recevoir par SMS</Button>
 						</Col>
-						<Col className='card'>
+				<Col className='card' onClick={this.generateTicket}>
 							<div className='icon-container'>
 								<img src={icon_ticket} alt="calendar icon" className="icon" />
 							</div>

@@ -36,6 +36,12 @@ export default class Accueil extends Component {
 				showSms: !this.state.showSms,
 				showTicket: !this.state.showTicket,
 			})
+		} else {
+			this.setState({
+				showTicket: false,
+				showSms: false,
+				showHome: true
+			})
 		}
 	}
 
@@ -55,7 +61,7 @@ export default class Accueil extends Component {
 					{showHome && (<NavigationHome toggle={this.toggleComponent}/>)}
 					{showTicket && (<Ticket user={this.state.user} toggle={this.toggleComponent}/>)}
 					{showSms && (<Sms user={this.state.user} toggle={this.toggleComponent}/>)}
-					<a href="/Accueil"><img src={logo_blue} alt="borne to be alive logo" className='footer-logo' /></a>
+					<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' onClick={this.toggleComponent} />
 				</Content>
 			</Layout >
 		)
