@@ -1,6 +1,8 @@
 import { NestFactory } from '@nestjs/core';
+import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import {ExpressAdapter} from '@nestjs/platform-express'
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as express from 'express'
 import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
@@ -12,7 +14,20 @@ export const createNestServer = async (expressInstance) =>{
       AppModule,
       new ExpressAdapter(expressInstance)
     );
-    return app.init();
+
+    app.useGlobalPipes(new ValidationPipe());
+
+    const options = new DocumentBuilder()
+    .setTitle('Born to be alive')
+    .setDescription('Api du projet')
+    .setVersion('1.0')
+    .addTag('borne')
+    .build();
+
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('doc', app, document);
+
+  return app.init();
 }
 
 
