@@ -1,13 +1,11 @@
 import './style.scss';
 
-import { Button, Col, Layout, Row } from 'antd';
+import { Button, Col, Row } from 'antd';
 import React,{ Component } from 'react';
 
-import { LeftOutlined } from '@ant-design/icons';
 import icon_mobile from '../../assets/img/icon_mobile.png';
 import icon_ticket from '../../assets/img/icon_ticket.png';
 
-const { Content } = Layout;
 export default class Ticket extends Component {
 
 	constructor(props) {

@@ -1,12 +1,11 @@
 import './style.scss';
 
-import { Button, Col, Layout, Row } from 'antd';
 import React,{ Component } from 'react';
 
+import { Layout } from 'antd';
+import NavigationHome from '../../components/NavigationHome';
 import Sms from '../Sms';
-import Ticket from '../Ticket';
-import icon_calendar from '../../assets/img/icon_calendar.png';
-import icon_ticket from '../../assets/img/icon_ticket.png';
+import Ticket from '../../components/Ticket';
 import logo_blue from '../../assets/img/Logo_blue.png';
 
 const { Content } = Layout;
@@ -36,7 +35,7 @@ export default class Accueil extends Component {
 							<p>Il y a <b>2</b> personnes avant vous. Votre temps d'attente est estimé à <b>1h</b></p>
 						</div>
 					</div>
-
+<NavigationHome/>
 							<Ticket/>
 							<Sms/>
 
