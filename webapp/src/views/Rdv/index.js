@@ -9,6 +9,8 @@ import {
 } from 'recharts';
 import { DatePicker, Layout, Tabs, TimePicker, Typography, } from 'antd';
 import React,{ Component } from 'react'
+import { debounce } from 'lodash';
+import { Redirect } from 'react-router-dom';
 
 import { LeftOutlined } from '@ant-design/icons';
 
@@ -17,6 +19,19 @@ const { Text } = Typography;
 const { Sider,Content } = Layout;
 
 export default class Rdv extends Component {
+	constructor(props) {
+		super(props);
+		this.handleInputThrottled = debounce(this.toggleRedirect, 30000);
+	}
+
+	componentDidMount() {
+		this.handleInputThrottled();
+	}
+
+	toggleRedirect () {
+		this.setState({redirect: true});
+	}
+
 	state = {
 		data:
 			[
@@ -89,7 +104,11 @@ export default class Rdv extends Component {
 			]
 
 	}
+	
 	render() {
+		if (this.state.redirect) {
+			return <Redirect push to="/" />
+		}
 		return (
 			<Layout className="rdv">
 				<Content>
@@ -116,8 +135,8 @@ export default class Rdv extends Component {
 				</Content>
 				<Sider >
 					<h2>Prendre un rendez-vous</h2>
-					<DatePicker style={{ width: "100%",marginBottom: 15 }} />
-					<TimePicker style={{ width: '100%',marginBottom: 15 }} />
+					<DatePicker style={{ width: "100%",marginBottom: 15 }} onOpenChange={this.handleInputThrottled.bind(this)}/>
+					<TimePicker style={{ width: '100%',marginBottom: 15 }} onOpenChange={this.handleInputThrottled.bind(this)}/>
 					<div className="hours">
 						<h3>Docteur Desjardins</h3>
 						<p><Text strong>Adresse:</Text> 9 Rue Léonard de Vinci, 92230 Gennevilliers</p>
