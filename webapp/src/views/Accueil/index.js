@@ -4,6 +4,7 @@ import React,{ Component } from 'react';
 
 import { Layout } from 'antd';
 import NavigationHome from '../../components/NavigationHome';
+import { Redirect } from 'react-router-dom';
 import Sms from '../Sms';
 import Ticket from '../../components/Ticket';
 import logo_blue from '../../assets/img/Logo_blue.png';
@@ -19,12 +20,14 @@ export default class Accueil extends Component {
 				name: "Rachel Bonneaux",
 				id: "290751211221474"
 			},
-			showTicket : false,
-			showSms: false,
-			showHome: true
+			redirect: false,
 		}
 	}
-
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({ redirect: true })
+		},30000)
+	}
 	toggleComponent = (item) => {
 		if (item === "Ticket") {
 			this.setState({
@@ -45,8 +48,18 @@ export default class Accueil extends Component {
 		}
 	}
 
+
+	disable() {
+		this.setState({
+			isDisabled: true
+		})
+	}
+
 	render() {
-		const { user, showHome, showSms, showTicket } = this.state;
+		const { user } = this.state;
+		if (this.state.redirect) {
+			return <Redirect push to="/" />
+		}
 		return (
 			<Layout>
 				<Content>
