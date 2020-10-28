@@ -8,6 +8,7 @@ import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 import * as fireorm from 'fireorm';
 import * as serviceAccount from './accountService.json'
+import { TicketService } from 'ticket/ticket.service';
 
 const server = express()
 
@@ -35,6 +36,8 @@ export const createNestServer = async (expressInstance) =>{
 
   const firestore = admin.firestore();
   fireorm.initialize(firestore);
+  
+  app.enableCors();
 
   return app.init();
 }
@@ -43,3 +46,17 @@ export const createNestServer = async (expressInstance) =>{
 createNestServer(server).then(r => console.log("Nest Ready")).catch(e=>console.error("Nest broken ", e))
 
 export const api = functions.https.onRequest(server);
+
+export const deleteAllTicketForDays = functions.pubsub
+  .schedule('5 1 * * *')
+  .timeZone('Europe/Paris')
+  .onRun(async () => {
+    try {
+      const ticketService = new TicketService()
+      const allTicket = await ticketService.findAllTickets()
+      ticketService.deleteTicket(allTicket.map(t=>t.id))
+      return 'success'
+    } catch (error) {
+      return 'Error '+error.message
+    }
+  });
