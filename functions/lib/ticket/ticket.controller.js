@@ -11,11 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TicketController = void 0;
 const common_1 = require("@nestjs/common");
 const dto_1 = require("./dto");
-const ticket_service_1 = require("./ticket.service");
+const ticket_service_1 = require("@ticket/ticket.service");
 let TicketController = class TicketController {
     constructor(ticketService) {
         this.ticketService = ticketService;
@@ -52,7 +53,7 @@ __decorate([
 ], TicketController.prototype, "findTicket", null);
 TicketController = __decorate([
     common_1.Controller('ticket'),
-    __metadata("design:paramtypes", [ticket_service_1.TicketService])
+    __metadata("design:paramtypes", [typeof (_a = typeof ticket_service_1.TicketService !== "undefined" && ticket_service_1.TicketService) === "function" ? _a : Object])
 ], TicketController);
 exports.TicketController = TicketController;
 //# sourceMappingURL=ticket.controller.js.map
