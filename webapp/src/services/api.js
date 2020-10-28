@@ -1,4 +1,4 @@
-class Api {
+export class Api {
 	static base_url = "http://localhost:5000/borne-to-be-alive/us-central1/api";
 	static async createTicket(ticket) {
 		const endpoint = "/ticket";
