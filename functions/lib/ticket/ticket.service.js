@@ -20,13 +20,27 @@ let TicketService = class TicketService {
         ticket.vitalId = createTicketDto.vitalId;
         ticket.phone = createTicketDto.phoneNumber;
         ticket.status = ticket_model_1.TicketStatus.OPEN;
-        return fireorm_1.getRepository(ticket_model_1.Ticket).create(ticket);
+        const created = await fireorm_1.getRepository(ticket_model_1.Ticket).create(ticket);
+        return created;
     }
     async findAllTickets() {
-        return fireorm_1.getRepository(ticket_model_1.Ticket).find();
+        const foundAll = await fireorm_1.getRepository(ticket_model_1.Ticket).find();
+        return foundAll;
     }
     async findOneTicket(id) {
-        return fireorm_1.getRepository(ticket_model_1.Ticket).findById(id);
+        const found = await fireorm_1.getRepository(ticket_model_1.Ticket).findById(id);
+        if (!found)
+            throw new common_1.NotFoundException('Not found ticket');
+        return found;
+    }
+    async updateTicket(id, newStatus) {
+        const ticket = await fireorm_1.getRepository(ticket_model_1.Ticket).findById(id);
+        ticket.status = newStatus;
+        const updated = await fireorm_1.getRepository(ticket_model_1.Ticket).update(ticket);
+        return updated;
+    }
+    async deleteTicket(id) {
+        return fireorm_1.getRepository(ticket_model_1.Ticket).delete(id);
     }
 };
 TicketService = __decorate([

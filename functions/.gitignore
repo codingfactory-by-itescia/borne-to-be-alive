@@ -4,6 +4,7 @@
 /node_modules
 src/dist/
 accountService.json
+dist
 
 # Logs
 logs

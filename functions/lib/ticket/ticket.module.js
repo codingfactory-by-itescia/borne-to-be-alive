@@ -10,12 +10,13 @@ exports.TicketModule = void 0;
 const common_1 = require("@nestjs/common");
 const ticket_controller_1 = require("./ticket.controller");
 const ticket_service_1 = require("./ticket.service");
+const ticket_satatus_validation_pipe_1 = require("./pipes/ticket-satatus-validation-pipe");
 let TicketModule = class TicketModule {
 };
 TicketModule = __decorate([
     common_1.Module({
         controllers: [ticket_controller_1.TicketController],
-        providers: [ticket_service_1.TicketService]
+        providers: [ticket_service_1.TicketService, ticket_satatus_validation_pipe_1.TicketSatatusValidationPipe]
     })
 ], TicketModule);
 exports.TicketModule = TicketModule;

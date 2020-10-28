@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TicketController = void 0;
 const common_1 = require("@nestjs/common");
 const dto_1 = require("./dto");
+const ticket_model_1 = require("./dto/ticket.model");
+const ticket_satatus_validation_pipe_1 = require("./pipes/ticket-satatus-validation-pipe");
 const ticket_service_1 = require("./ticket.service");
 let TicketController = class TicketController {
     constructor(ticketService) {
@@ -28,6 +30,9 @@ let TicketController = class TicketController {
     }
     findTicket(id) {
         return this.ticketService.findOneTicket(id);
+    }
+    updateTicket(id, status) {
+        return this.ticketService.updateTicket(id, status);
     }
 };
 __decorate([
@@ -50,6 +55,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], TicketController.prototype, "findTicket", null);
+__decorate([
+    common_1.Put(':id'),
+    __param(0, common_1.Param('id')), __param(1, common_1.Body('status', ticket_satatus_validation_pipe_1.TicketSatatusValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], TicketController.prototype, "updateTicket", null);
 TicketController = __decorate([
     common_1.Controller('ticket'),
     __metadata("design:paramtypes", [ticket_service_1.TicketService])

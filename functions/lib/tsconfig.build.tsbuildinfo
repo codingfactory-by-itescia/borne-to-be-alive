@@ -1931,23 +1931,78 @@
         "signature": "5f50d63b1c88c9625ba05f596859a327c6b64e338f7c986e63082e5d256484df",
         "affectsGlobalScope": false
       },
+      "../src/ticket/pipes/ticket-satatus-validation-pipe.ts": {
+        "version": "8cc140a29a6c869dca519b53ea869879579b9382c1f12d7aa78b387962cffc72",
+        "signature": "fe5e61b945a1523251107503e507bd8cca3b527d4b2c48315e6231fe903f316e",
+        "affectsGlobalScope": false
+      },
       "../src/ticket/ticket.service.ts": {
-        "version": "ab4afac4e367f4c6450b4ecd500a5cde321d461f513877d6480f122cc00e6d7e",
-        "signature": "c9ba636658a03c77ae1cfe9e4413e1db6c6386b6ebc8e12dfb0e1a0759e40d06",
+        "version": "faa5c17dba625d276c0daecf5da465dd8c2a83d993465f549b826a89c58d80b0",
+        "signature": "14b8cba29fb828585898a444537206aab8d8a3b3fdbe36240231e93a2cf79da1",
         "affectsGlobalScope": false
       },
       "../src/ticket/ticket.controller.ts": {
-        "version": "6917d66750ca56a643e45a70aca8127417bc47389cd351c3c4dea758fac658fd",
-        "signature": "3ba0a81c1d5a5e6715eb52df741be6967ae3d068f96f1734dc4ea10ed70693af",
+        "version": "63c9739c1a31226183c9211be0a5e2f733c085372faedf140c6aab33c9718608",
+        "signature": "7de1fedf7adc0823f861a4d78be49ee8c947d512eb71385aa072e8c112a4d6e3",
         "affectsGlobalScope": false
       },
       "../src/ticket/ticket.module.ts": {
-        "version": "f90d212f52eac0e0948cba6560635f4efffe8454bd6716604737b6d205537287",
+        "version": "52c8c3b96117fb566178ffecb6b0812e4a5edd5cd452b1e7e24ae63f647d3982",
         "signature": "1b76cd7f69faf86a138f6166e3df9903b009c7ce60ec4562444cca4baa472622",
         "affectsGlobalScope": false
       },
+      "../src/sms/sms.controller.ts": {
+        "version": "76a2ab3ce66d53680aa2fce410a3aa6947d9726566c6b85f8d8b9b4c6f8115d4",
+        "signature": "2b8439160ef95c39f1044c169b130d315eabe1069100b95d10952c448d3614cc",
+        "affectsGlobalScope": false
+      },
+      "../src/sms/sms.service.ts": {
+        "version": "1e6e0fa0164ccb6849f8857c0652276c428d1d3c347cf887b16882c4d165fb70",
+        "signature": "251a39c6a53b7e2316058e9e7f9e05567655d2cbe42c0388cb0ab5e7435865e7",
+        "affectsGlobalScope": false
+      },
+      "../src/sms/sms.module.ts": {
+        "version": "e6db4b4f4f751b55e7826b914813fe9ad209a0e27311deba799428f6f64c3210",
+        "signature": "95f956e95e49249dd4a853027ce185648f37143700a742190d8f82a4f6b4738b",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/dto/create-booking.ts": {
+        "version": "86b3e3434d8b190519adea7a93d1f4d5bca6aa26936ee30a44cc5287abca875c",
+        "signature": "7ae2bbd39a9bc353b43501ae5c1a4345e252c59a9cc23b68544eda15a4cc83d6",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/dto/get-booking-filter-dto.ts": {
+        "version": "9687f0a1c915331d402697a79d7fbacd5af3a09051578ae8a878b90c8f91fc11",
+        "signature": "fc5c56701499d79e40ed2d46dee0d3df7fd545d4af2cdb0156b8219ac3aeeda1",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/dto/index.ts": {
+        "version": "26d8fbccd673852f9d37713b7cbd5cdabc4359de46e27f3535ed29a6fa9e9b5d",
+        "signature": "91f58a912804b9eb9c8670dee9e16a3be34df7df431a0d33358fc2460cee10c7",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/dto/booking.model.ts": {
+        "version": "d0ee5b0aee4023bef564352c05ce4a376ac74f94998f6c6ba28a7de212a19fa1",
+        "signature": "ee435147ecf8f11e6f6e95ed027e5e300ee491a96247e15df2690fa2acf811b6",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/booking.service.ts": {
+        "version": "4c190f747327448269fc9bcc2a1f477d168c2730207382d7e8a914b3b82f9546",
+        "signature": "fbd19aede6eb0d7a2d282c5f9465156f33a71897e3bbb4eb7ac77aada21d6832",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/booking.controller.ts": {
+        "version": "aa68066a7c70400e3da4b9129a4816896326386bec242353540b16febcb18df9",
+        "signature": "11c1b5728f2cb2d60cc438ce20375402aafbbca6aa4d56efc3d4e3340508d80e",
+        "affectsGlobalScope": false
+      },
+      "../src/booking/booking.module.ts": {
+        "version": "0ce9440e53c3d118388fffd8902fd2d89028aa4d1ff4e69ab3107e9b0d092084",
+        "signature": "307da3f1f46926da44f7648eb8e50e8695fb098723e4ee7b33d6bb54573c7d81",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "16fbb8fcb978978edd99d4cc069f2e9a7a87a5d1b2eece22b11dce353314be59",
+        "version": "3dab5355d6211b913436510a01a3dc8fa49c0996d41fadfd593d864c377e2fbe",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -3287,7 +3342,7 @@
       "target": 4,
       "sourceMap": true,
       "outDir": "./",
-      "baseUrl": "..",
+      "baseUrl": "../src",
       "incremental": true,
       "resolveJsonModule": true,
       "paths": {
@@ -5652,10 +5707,35 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
+        "../src/booking/booking.module.ts",
+        "../src/sms/sms.module.ts",
         "../src/ticket/ticket.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/booking/booking.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/booking/booking.service.ts",
+        "../src/booking/dto/index.ts"
+      ],
+      "../src/booking/booking.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/booking/booking.controller.ts",
+        "../src/booking/booking.service.ts"
+      ],
+      "../src/booking/booking.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/fireorm/lib/src/index.d.ts",
+        "../src/booking/dto/booking.model.ts",
+        "../src/booking/dto/index.ts"
+      ],
+      "../src/booking/dto/get-booking-filter-dto.ts": [
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/booking/dto/index.ts": [
+        "../src/booking/dto/create-booking.ts",
+        "../src/booking/dto/get-booking-filter-dto.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -5669,6 +5749,17 @@
         "../src/accountservice.json",
         "../src/app.module.ts"
       ],
+      "../src/sms/sms.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/sms/sms.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/sms/sms.controller.ts",
+        "../src/sms/sms.service.ts"
+      ],
+      "../src/sms/sms.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
       "../src/ticket/dto/createticket.dto.ts": [
         "../node_modules/class-validator/types/index.d.ts"
       ],
@@ -5678,13 +5769,20 @@
       "../src/ticket/dto/ticket.model.ts": [
         "../node_modules/fireorm/lib/src/index.d.ts"
       ],
+      "../src/ticket/pipes/ticket-satatus-validation-pipe.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/ticket/dto/ticket.model.ts"
+      ],
       "../src/ticket/ticket.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/ticket/dto/index.ts",
+        "../src/ticket/dto/ticket.model.ts",
+        "../src/ticket/pipes/ticket-satatus-validation-pipe.ts",
         "../src/ticket/ticket.service.ts"
       ],
       "../src/ticket/ticket.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/ticket/pipes/ticket-satatus-validation-pipe.ts",
         "../src/ticket/ticket.controller.ts",
         "../src/ticket/ticket.service.ts"
       ],
@@ -8048,12 +8146,29 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
+      "../src/booking/booking.controller.ts": [
+        "../src/booking/booking.service.ts",
+        "../src/booking/dto/booking.model.ts",
+        "../src/booking/dto/index.ts"
+      ],
+      "../src/booking/booking.service.ts": [
+        "../src/booking/dto/booking.model.ts",
+        "../src/booking/dto/index.ts"
+      ],
+      "../src/booking/dto/index.ts": [
+        "../src/booking/dto/create-booking.ts",
+        "../src/booking/dto/get-booking-filter-dto.ts"
+      ],
       "../src/main.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/firebase-functions/lib/index.d.ts"
       ],
       "../src/ticket/dto/index.ts": [
         "../src/ticket/dto/createticket.dto.ts"
+      ],
+      "../src/ticket/pipes/ticket-satatus-validation-pipe.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/ticket/dto/ticket.model.ts"
       ],
       "../src/ticket/ticket.controller.ts": [
         "../src/ticket/dto/index.ts",
