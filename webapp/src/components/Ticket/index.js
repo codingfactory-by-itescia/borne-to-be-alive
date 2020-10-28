@@ -3,7 +3,6 @@ import './style.scss';
 import { Button, Col, Row } from 'antd';
 import React,{ Component } from 'react';
 
-import {Api} from '../../services/api.js'
 import icon_mobile from '../../assets/img/icon_mobile.png';
 import icon_ticket from '../../assets/img/icon_ticket.png';
 
@@ -35,15 +34,7 @@ export default class Ticket extends Component {
 		this.setState({ isDisabled: true })
 	}
 
-	createTicket = async () => {
-		await Api.createTicket({
-			name: 'Arconte',
-			surname: 'Mathilde',
-			phoneNumber: '06843543',
-			vitalId: '290751211221474'
-		})
-		this.toggleDisable()
-	}
+
 
 	render() {
 		return (
@@ -58,7 +49,7 @@ export default class Ticket extends Component {
 					<div className='icon-container'>
 						<img src={icon_ticket} alt="calendar icon" className="icon" />
 					</div>
-					<Button onClick={this.createTicket} disabled={this.state.isDisabled} type="primary" style={{ width: "100%" }}>Imprimer votre ticket</Button>
+					<Button onClick={this.props.createTicket} disabled={this.state.isDisabled} type="primary" style={{ width: "100%" }}>Imprimer votre ticket</Button>
 				</Col>
 			</Row>
 		)

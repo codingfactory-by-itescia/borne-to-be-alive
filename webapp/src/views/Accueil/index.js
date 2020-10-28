@@ -2,6 +2,7 @@ import './style.scss';
 
 import React,{ Component } from 'react';
 
+import { Api } from '../../services/api.js'
 import { Layout } from 'antd';
 import NavigationHome from '../../components/NavigationHome';
 import { Redirect } from 'react-router-dom';
@@ -51,6 +52,21 @@ export default class Accueil extends Component {
 		}
 	}
 
+	createTicket = async () => {
+		try {
+			await Api.createTicket({
+				first_name: 'Mat',
+				last_name: 'Arc',
+				phoneNumber: '06843543',
+				vitalId: '290751211221474'
+			})
+
+		} catch (err) {
+			console.error(err);
+		}
+
+	}
+
 
 	disable() {
 		this.setState({
@@ -75,7 +91,7 @@ export default class Accueil extends Component {
 						</div>
 					</div>
 					{showHome && (<NavigationHome toggle={this.toggleComponent}/>)}
-					{showTicket && (<Ticket user={this.state.user} toggle={this.toggleComponent}/>)}
+					{showTicket && (<Ticket user={this.state.user} toggle={this.toggleComponent} createTicket={this.createTicket}/>)}
 					{showSms && (<Sms user={this.state.user} toggle={this.toggleComponent}/>)}
 					<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' onClick={this.toggleComponent} />
 				</Content>

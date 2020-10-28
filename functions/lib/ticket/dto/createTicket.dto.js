@@ -17,12 +17,12 @@ __decorate([
     class_validator_1.IsDefined(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateTicketDto.prototype, "name", void 0);
+], CreateTicketDto.prototype, "first_name", void 0);
 __decorate([
     class_validator_1.IsDefined(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateTicketDto.prototype, "surname", void 0);
+], CreateTicketDto.prototype, "last_name", void 0);
 __decorate([
     class_validator_1.IsDefined(),
     class_validator_1.IsString(),

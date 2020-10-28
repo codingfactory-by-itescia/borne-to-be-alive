@@ -5,5 +5,5 @@ export declare class TicketService {
     findAllTickets(): Promise<Ticket[]>;
     findOneTicket(id: string): Promise<Ticket>;
     updateTicket(id: string, newStatus: string): Promise<Ticket>;
-    deleteTicket(id: string): Promise<void>;
+    deleteTicket(ids: string[]): Promise<string>;
 }

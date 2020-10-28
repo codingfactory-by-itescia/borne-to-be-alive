@@ -1787,8 +1787,8 @@
         "affectsGlobalScope": false
       },
       "../src/ticket/dto/createticket.dto.ts": {
-        "version": "9fe0849ff453984aa8f1f2c7d8e20cd5796da91371fb1d63a8c7a5bba9147f0e",
-        "signature": "2130528ae32d4d1f7c8f4c6a502ea2749873ea4de3898dfa0585c9bc1f0cb1ad",
+        "version": "462e02d9ae8a1d2a752eed416edb289a6266b71fe0a763f02f6988086b370e07",
+        "signature": "b85e71da7c4c8276d1c194c6f56c625dbb5ab37f98d63d3016839e935cd11a0a",
         "affectsGlobalScope": false
       },
       "../src/ticket/dto/index.ts": {
@@ -1927,8 +1927,8 @@
         "affectsGlobalScope": false
       },
       "../src/ticket/dto/ticket.model.ts": {
-        "version": "0ccbdf4679dd672f7aa641c253bcc43430d0c0dfc5eb9b17c8ba0c0cc2c34706",
-        "signature": "5f50d63b1c88c9625ba05f596859a327c6b64e338f7c986e63082e5d256484df",
+        "version": "ba1a060172baeb40d1cf6875333dd3b3e92cf1fd94bb01f1af57c9bcaac7c7a0",
+        "signature": "20580b8bc3b5602ab9f411e46addd8ca02f0338401c65c5210deea601deba4d0",
         "affectsGlobalScope": false
       },
       "../src/ticket/pipes/ticket-satatus-validation-pipe.ts": {
@@ -1937,12 +1937,12 @@
         "affectsGlobalScope": false
       },
       "../src/ticket/ticket.service.ts": {
-        "version": "faa5c17dba625d276c0daecf5da465dd8c2a83d993465f549b826a89c58d80b0",
-        "signature": "14b8cba29fb828585898a444537206aab8d8a3b3fdbe36240231e93a2cf79da1",
+        "version": "b0bf458e4a3b7a32105a256139f457e53719ce10726d66a7c8a3b171f8529efb",
+        "signature": "b68a9ce7e011fc8eef5130193b42071fc948f82bfa823208f9d35bdc737a11ac",
         "affectsGlobalScope": false
       },
       "../src/ticket/ticket.controller.ts": {
-        "version": "63c9739c1a31226183c9211be0a5e2f733c085372faedf140c6aab33c9718608",
+        "version": "a7aeca7777c82b24044f96a4c5fce92fdb47fc45a0fdd6e5c6222fc611ab133d",
         "signature": "7de1fedf7adc0823f861a4d78be49ee8c947d512eb71385aa072e8c112a4d6e3",
         "affectsGlobalScope": false
       },
@@ -3062,8 +3062,8 @@
         "affectsGlobalScope": true
       },
       "../src/main.ts": {
-        "version": "edc9634495d7e25133045d04dc0df07ef6a484579b418d99b36e977ff0883e69",
-        "signature": "78a8528eacd5bbf10e45bba1c62a19eaa4249f44d67fd393a9d98b93dd4466e7",
+        "version": "2d1c6817e2cb7e76394017d245ff3b8df753279db24496955c96bb37fb6d073a",
+        "signature": "5785a6dec7912404ea05f5da77ea9baeb64944744d9f709ccf6686a6ade69eef",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -5837,7 +5837,8 @@
         "../node_modules/firebase-functions/lib/index.d.ts",
         "../node_modules/fireorm/lib/src/index.d.ts",
         "../src/accountservice.json",
-        "../src/app.module.ts"
+        "../src/app.module.ts",
+        "../src/ticket/ticket.service.ts"
       ],
       "../src/sms/sms.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts"

@@ -10,10 +10,8 @@ export class Api {
 			body: JSON.stringify(ticket)
 		}
 		try {
-			const response = await fetch(Api.base_url + endpoint,conf);
-			const data = await response.json();
-
-			return data;
+			const response = await Api.request(Api.base_url + endpoint,conf);
+			return response;
 		} catch (err) {
 			console.log(err);
 		}
@@ -21,24 +19,20 @@ export class Api {
 
 	static async getTickets() {
 		const endpoint = "/ticket";
-
 		const conf = {
 			method: 'GET',
 			mode: 'cors',
 			cache: 'default',
 		}
 		try {
-			const response = await fetch(Api.base_url + endpoint,conf);
-			const data = await response.json();
-
-			return data;
+			const response = await Api.request(Api.base_url + endpoint,conf);
+			return response;
 		} catch (err) {
 			console.log(err);
 		}
 	}
 	static async updateTicketStatus(status) {
 		const endpoint = "/ticket";
-
 		const conf = {
 			method: 'PUT',
 			mode: 'cors',
@@ -46,12 +40,28 @@ export class Api {
 			body: JSON.stringify(status)
 		}
 		try {
-			const response = await fetch(Api.base_url + endpoint,conf);
-			const data = await response.json();
-
-			return data;
+			const response = await Api.request(Api.base_url + endpoint,conf);
+			return response;
 		} catch (err) {
 			console.log(err);
 		}
+	}
+
+	static async request(url,conf) {
+		var myHeaders = new Headers();
+		myHeaders.append("Content-Type","application/json");
+		Object.defineProperty(conf,'headers',{
+			value: myHeaders,
+			writable: true
+		});
+
+		let response = await fetch(url,conf)
+
+		if (response.status >= 400) {
+			throw new Error(response.message)
+		}
+
+		const data = await response.json();
+		return data;
 	}
 }
