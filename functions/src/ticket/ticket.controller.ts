@@ -1,6 +1,8 @@
-import { Body, Query, Controller, Get, Post, Param} from '@nestjs/common';
+import { Body, Query, Controller, Get, Post, Param, Put} from '@nestjs/common';
 import { CreateTicketDto } from './dto';
-import { TicketService } from '@ticket/ticket.service'
+import { TicketStatus } from './dto/ticket.model';
+import { TicketSatatusValidationPipe } from './pipes/ticket-satatus-validation-pipe';
+import { TicketService } from './ticket.service'
 
 @Controller('ticket')
 export class TicketController {
@@ -19,5 +21,10 @@ export class TicketController {
     @Get(':id')
     findTicket(@Param('id') id: string){
         return this.ticketService.findOneTicket(id);
+    }
+
+    @Put(':id')
+    updateTicket(@Param('id') id: string, @Body('status', TicketSatatusValidationPipe) status: TicketStatus){
+        return this.ticketService.updateTicket(id, status);
     }
 }
