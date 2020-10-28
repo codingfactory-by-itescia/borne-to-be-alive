@@ -21,6 +21,9 @@ export default class Accueil extends Component {
 				id: "290751211221474"
 			},
 			redirect: false,
+			showTicket: false,
+			showHome: true,
+			showSms: false
 		}
 	}
 	componentDidMount() {
@@ -56,7 +59,7 @@ export default class Accueil extends Component {
 	}
 
 	render() {
-		const { user } = this.state;
+		const { user, showTicket, showHome, showSms} = this.state;
 		if (this.state.redirect) {
 			return <Redirect push to="/" />
 		}
