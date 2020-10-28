@@ -2,19 +2,19 @@ import { IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class CreateTicketDto {
 
-    @IsOptional()
-    @IsString()
-    first_name: string;
+  @IsDefined()
+  @IsString()
+  first_name: string;
 
-    @IsOptional()
-    @IsString()
-    last_name: string;
+  @IsDefined()
+  @IsString()
+  last_name: string;
 
-    @IsOptional()
-    @IsString()
-    vitalId: string;
+  @IsDefined()
+  @IsString()
+  vitalId: string;
 
-    @IsOptional()
-    @IsString()
-    phoneNumber: string;
-  }
+  @IsDefined()
+  @IsString()
+  phoneNumber: string;
+}

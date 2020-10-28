@@ -16,8 +16,8 @@ Ticket = __decorate([
 exports.Ticket = Ticket;
 var TicketStatus;
 (function (TicketStatus) {
-    TicketStatus["OPEN"] = "Open";
-    TicketStatus["IN_PROGRESS"] = "In Progress";
-    TicketStatus["DONE"] = "Done";
+    TicketStatus["OPEN"] = "open";
+    TicketStatus["IN_PROGRESS"] = "in Progress";
+    TicketStatus["DONE"] = "done";
 })(TicketStatus = exports.TicketStatus || (exports.TicketStatus = {}));
 //# sourceMappingURL=ticket.model.js.map

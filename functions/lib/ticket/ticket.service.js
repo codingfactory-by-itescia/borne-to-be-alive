@@ -8,15 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TicketService = void 0;
 const common_1 = require("@nestjs/common");
-const fireorm_1 = require("fireorm");
 const ticket_model_1 = require("./dto/ticket.model");
+const fireorm_1 = require("fireorm");
 let TicketService = class TicketService {
     async createTicket(createTicketDto) {
         const ticket = new ticket_model_1.Ticket();
         const snapshot = await this.findAllTickets();
         ticket.id = (snapshot.length + 1).toString();
-        ticket.name = createTicketDto.name;
-        ticket.surname = createTicketDto.surname;
+        ticket.first_name = createTicketDto.first_name;
+        ticket.last_name = createTicketDto.last_name;
         ticket.vitalId = createTicketDto.vitalId;
         ticket.phone = createTicketDto.phoneNumber;
         ticket.status = ticket_model_1.TicketStatus.OPEN;
@@ -37,10 +37,15 @@ let TicketService = class TicketService {
         const ticket = await fireorm_1.getRepository(ticket_model_1.Ticket).findById(id);
         ticket.status = newStatus;
         const updated = await fireorm_1.getRepository(ticket_model_1.Ticket).update(ticket);
+        if (status === ticket_model_1.TicketStatus.DONE)
+            await this.deleteTicket([ticket.id]);
         return updated;
     }
-    async deleteTicket(id) {
-        return fireorm_1.getRepository(ticket_model_1.Ticket).delete(id);
+    async deleteTicket(ids) {
+        ids.forEach(async (id) => {
+            await fireorm_1.getRepository(ticket_model_1.Ticket).delete(id);
+        });
+        return 'success';
     }
 };
 TicketService = __decorate([
