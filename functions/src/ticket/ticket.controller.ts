@@ -1,4 +1,4 @@
-import { Body, Query, Controller, Get, Post, Param, Put} from '@nestjs/common';
+import { Body, Query, Controller, Get, Post, Param, Put, Delete} from '@nestjs/common';
 import { CreateTicketDto } from './dto';
 import { TicketStatus } from './dto/ticket.model';
 import { TicketSatatusValidationPipe } from './pipes/ticket-satatus-validation-pipe';

@@ -31,20 +31,25 @@ export class TicketService {
         if(!found)
             throw new NotFoundException('Not found ticket');
 
-        return found
+        return found.filter(ticket=> ticket.status === TicketStatus.OPEN)
     }
 
     async updateTicket(id: string, newStatus: string): Promise<Ticket>{
         const ticket = await getRepository(Ticket).findById(id);
-
         ticket.status = newStatus
-
         const updated = await getRepository(Ticket).update(ticket)
+
+        if(status === TicketStatus.DONE)
+             await this.deleteTicket([ticket.id])
+
         return updated
     }
 
-    async deleteTicket(id: string): Promise<void>{
-        return getRepository(Ticket).delete(id)
+    async deleteTicket(ids: string[]): Promise<string>{
+        ids.forEach(async id=>{
+            await getRepository(Ticket).delete(id)
+        })
+        return 'success'
     }
 
 }
