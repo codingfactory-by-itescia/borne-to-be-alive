@@ -11,5 +11,4 @@ export class GetBookingFilterDto {
 
 interface TimeSearch {
     time_start: number;
-    time_end: number;
 }

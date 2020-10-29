@@ -17,4 +17,13 @@ export class CreateTicketDto {
     @IsOptional()
     @IsString()
     phoneNumber: string;
+
+    @IsDefined()
+    @IsString()
+    type: TypeUser
+  }
+
+  export enum TypeUser {
+    ANONYMOUS = 'anonymous',
+    IDENTIFY = 'identify'
   }

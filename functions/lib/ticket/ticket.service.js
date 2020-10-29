@@ -10,18 +10,29 @@ exports.TicketService = void 0;
 const common_1 = require("@nestjs/common");
 const fireorm_1 = require("fireorm");
 const ticket_model_1 = require("./dto/ticket.model");
+const createTicket_dto_1 = require("./dto/createTicket.dto");
 let TicketService = class TicketService {
     async createTicket(createTicketDto) {
-        const ticket = new ticket_model_1.Ticket();
         const snapshot = await this.findAllTickets();
-        ticket.id = (snapshot.length + 1).toString();
-        ticket.name = createTicketDto.name;
-        ticket.surname = createTicketDto.surname;
-        ticket.vitalId = createTicketDto.vitalId;
-        ticket.phone = createTicketDto.phoneNumber;
-        ticket.status = ticket_model_1.TicketStatus.OPEN;
-        const created = await fireorm_1.getRepository(ticket_model_1.Ticket).create(ticket);
-        return created;
+        if (createTicketDto.type === createTicket_dto_1.TypeUser.IDENTIFY) {
+            const ticket = new ticket_model_1.Ticket();
+            ticket.status = ticket_model_1.TicketStatus.OPEN;
+            ticket.first_name = createTicketDto.first_name;
+            ticket.last_name = createTicketDto.last_name;
+            ticket.vitalId = createTicketDto.vitalId;
+            ticket.phone = createTicketDto.phoneNumber;
+            ticket.id = (snapshot.length + 1).toString();
+            ticket.status = ticket_model_1.TicketStatus.OPEN;
+            const created = await fireorm_1.getRepository(ticket_model_1.Ticket).create(ticket);
+            return created;
+        }
+        if (createTicketDto.type === createTicket_dto_1.TypeUser.ANONYMOUS) {
+            const ticket = new ticket_model_1.Ticket();
+            ticket.id = (snapshot.length + 1).toString();
+            ticket.status = ticket_model_1.TicketStatus.OPEN;
+            const created = await fireorm_1.getRepository(ticket_model_1.Ticket).create(ticket);
+            return created;
+        }
     }
     async findAllTickets() {
         const foundAll = await fireorm_1.getRepository(ticket_model_1.Ticket).find();
@@ -37,10 +48,15 @@ let TicketService = class TicketService {
         const ticket = await fireorm_1.getRepository(ticket_model_1.Ticket).findById(id);
         ticket.status = newStatus;
         const updated = await fireorm_1.getRepository(ticket_model_1.Ticket).update(ticket);
+        if (status === ticket_model_1.TicketStatus.DONE)
+            await this.deleteTicket([ticket.id]);
         return updated;
     }
-    async deleteTicket(id) {
-        return fireorm_1.getRepository(ticket_model_1.Ticket).delete(id);
+    async deleteTicket(ids) {
+        ids.forEach(async (id) => {
+            await fireorm_1.getRepository(ticket_model_1.Ticket).delete(id);
+        });
+        return 'success';
     }
 };
 TicketService = __decorate([

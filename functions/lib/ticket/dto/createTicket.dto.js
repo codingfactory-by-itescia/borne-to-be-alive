@@ -9,29 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTicketDto = void 0;
+exports.TypeUser = exports.CreateTicketDto = void 0;
 const class_validator_1 = require("class-validator");
 class CreateTicketDto {
 }
 __decorate([
-    class_validator_1.IsDefined(),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateTicketDto.prototype, "name", void 0);
+], CreateTicketDto.prototype, "first_name", void 0);
 __decorate([
-    class_validator_1.IsDefined(),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateTicketDto.prototype, "surname", void 0);
+], CreateTicketDto.prototype, "last_name", void 0);
 __decorate([
-    class_validator_1.IsDefined(),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], CreateTicketDto.prototype, "vitalId", void 0);
 __decorate([
-    class_validator_1.IsDefined(),
+    class_validator_1.IsOptional(),
     class_validator_1.IsString(),
     __metadata("design:type", String)
 ], CreateTicketDto.prototype, "phoneNumber", void 0);
+__decorate([
+    class_validator_1.IsDefined(),
+    class_validator_1.IsString(),
+    __metadata("design:type", String)
+], CreateTicketDto.prototype, "type", void 0);
 exports.CreateTicketDto = CreateTicketDto;
+var TypeUser;
+(function (TypeUser) {
+    TypeUser["ANONYMOUS"] = "anonymous";
+    TypeUser["IDENTIFY"] = "identify";
+})(TypeUser = exports.TypeUser || (exports.TypeUser = {}));
 //# sourceMappingURL=createTicket.dto.js.map

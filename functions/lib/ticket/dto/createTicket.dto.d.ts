@@ -1,6 +1,11 @@
 export declare class CreateTicketDto {
-    name: string;
-    surname: string;
+    first_name: string;
+    last_name: string;
     vitalId: string;
     phoneNumber: string;
+    type: TypeUser;
+}
+export declare enum TypeUser {
+    ANONYMOUS = "anonymous",
+    IDENTIFY = "identify"
 }

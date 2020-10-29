@@ -4,7 +4,13 @@ export class CreateBookingDto {
     day: number;
     day_of_week: number;
     month: number;
-    name: string;
-    surname: string;
+    first_name: string;
+    last_name: string;
     vitalId: string;
+    type: TypeUser;
 }
+
+export enum TypeUser {
+    ANONYMOUS = 'anonymous',
+    IDENTIFY = 'identify'
+  }

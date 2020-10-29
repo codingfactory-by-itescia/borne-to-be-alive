@@ -2,6 +2,8 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { CreateBookingDto, GetBookingFilterDto } from './dto';
 import { getRepository } from 'fireorm';
 import { Booking, BookingStatus} from './dto/booking.model'
+import { v4 as uuidv4 } from 'uuid';
+import { TypeUser } from './dto/create-booking';
 
 @Injectable()
 export class BookingService {
@@ -9,19 +11,24 @@ export class BookingService {
     async createBooking(booking: CreateBookingDto): Promise<Booking>{
 
         const newBooking = new Booking()
-        newBooking.id = ''
-        newBooking.name = booking.name
-        newBooking.surname = booking.surname
-        newBooking.vitalId = booking.vitalId
+        newBooking.id = uuidv4()
+        newBooking.status = BookingStatus.BOOKED
         newBooking.time_start = booking.time_start
-        newBooking.time_end = booking.time_end
         newBooking.day = booking.day
         newBooking.day_of_week = booking.day_of_week
         newBooking.month = booking.month
-        newBooking.status = BookingStatus.BOOKED
+
+
         if(this.validateBookingTime(newBooking)){
             throw new BadRequestException('There is already a reservation at this time.')
         }
+
+        if(booking.type === TypeUser.IDENTIFY){
+            newBooking.first_name = booking.first_name
+            newBooking.last_name = booking.last_name
+            newBooking.vitalId = booking.vitalId
+        }
+
         const created = await getRepository(Booking).create(newBooking)
         return  created
     }
@@ -45,14 +52,14 @@ export class BookingService {
         }
         else if(time && !status){
             findSearch = await getRepository(Booking)
-            .whereGreaterOrEqualThan(booking => booking.time_end, time.time_start)
-            .whereLessOrEqualThan(booking=> booking.time_start, time.time_end)
+            .whereGreaterOrEqualThan(booking => booking.time_start, time.time_start)
+            .whereLessOrEqualThan(booking=> booking.time_start + (30 * 60 * 1000), time.time_start)
             .find()
         }
         else if(time && status){
             findSearch = await getRepository(Booking)
-            .whereGreaterOrEqualThan(booking => booking.time_end, time.time_start)
-            .whereLessOrEqualThan(booking=> booking.time_start, time.time_end)
+            .whereGreaterOrEqualThan(booking => booking.time_start, time.time_start)
+            .whereLessOrEqualThan(booking=> booking.time_start +  (30 * 60 * 1000), time.time_start)
             .whereEqualTo(booking => booking.status, status)
             .find()
         }
@@ -65,9 +72,9 @@ export class BookingService {
         return booking
     }
 
-    private async validateBookingTime(bookingCreate: CreateBookingDto): Promise<boolean>{
+    private async validateBookingTime(bookingCreate: Booking): Promise<boolean>{
         const filterSearch = new GetBookingFilterDto()
-        filterSearch.time = {time_start: bookingCreate.time_start, time_end: bookingCreate.time_end}
+        filterSearch.time = {time_start: bookingCreate.time_start}
         const arrayFinded = await this.searchBooking(filterSearch)
         if(arrayFinded.length > 0)
             return false

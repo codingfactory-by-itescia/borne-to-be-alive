@@ -2,22 +2,32 @@ import { Injectable, NotFoundException, NotAcceptableException, BadRequestExcept
 import { getRepository } from 'fireorm';
 import {Ticket, TicketStatus} from './dto/ticket.model'
 import { CreateTicketDto } from './dto';
+import { TypeUser } from './dto/createTicket.dto';
 
 @Injectable()
 export class TicketService {
 
     async createTicket(createTicketDto: CreateTicketDto): Promise<Ticket> {
-        const ticket = new Ticket();
         const snapshot =  await this.findAllTickets()
+
+        const ticket = new Ticket();
         ticket.id = (snapshot.length + 1).toString()
-        ticket.name = createTicketDto.name;
-        ticket.surname = createTicketDto.surname;
-        ticket.vitalId = createTicketDto.vitalId;
-        ticket.phone = createTicketDto.phoneNumber;
         ticket.status = TicketStatus.OPEN;
 
-        const created = await getRepository(Ticket).create(ticket);
-        return created
+        if(createTicketDto.type === TypeUser.IDENTIFY){
+            ticket.first_name = createTicketDto.first_name;
+            ticket.last_name = createTicketDto.last_name;
+            ticket.vitalId = createTicketDto.vitalId;
+            ticket.phone = createTicketDto.phoneNumber;
+
+            const created = await getRepository(Ticket).create(ticket);
+            return created
+        }
+
+        if(createTicketDto.type === TypeUser.ANONYMOUS){
+            const created = await getRepository(Ticket).create(ticket);
+            return created
+        }
     }
 
    async findAllTickets(): Promise<Ticket[]> {
@@ -31,7 +41,7 @@ export class TicketService {
         if(!found)
             throw new NotFoundException('Not found ticket');
 
-        return found.filter(ticket=> ticket.status === TicketStatus.OPEN)
+        return found
     }
 
     async updateTicket(id: string, newStatus: string): Promise<Ticket>{

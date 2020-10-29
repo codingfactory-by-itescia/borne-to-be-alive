@@ -1,13 +1,13 @@
 export declare class Ticket {
     id: string;
-    name: string;
-    surname: string;
-    vitalId: string;
-    phone: string;
+    first_name: string | null;
+    last_name: string | null;
+    vitalId: string | null;
+    phone: string | null;
     status: string;
 }
 export declare enum TicketStatus {
-    OPEN = "Open",
-    IN_PROGRESS = "In Progress",
-    DONE = "Done"
+    OPEN = "open",
+    IN_PROGRESS = "in Progress",
+    DONE = "done"
 }
