@@ -2,26 +2,26 @@ import { IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class CreateTicketDto {
 
-    @IsOptional()
-    @IsString()
-    first_name: string;
+  @IsDefined()
+  @IsString()
+  first_name: string;
 
-    @IsOptional()
-    @IsString()
-    last_name: string;
+  @IsDefined()
+  @IsString()
+  last_name: string;
 
-    @IsOptional()
-    @IsString()
-    vitalId: string;
+  @IsDefined()
+  @IsString()
+  vitalId: string;
 
-    @IsOptional()
-    @IsString()
-    phoneNumber: string;
+  @IsOptional()
+  @IsString()
+  phoneNumber: string;
 
-    @IsDefined()
-    @IsString()
-    type: TypeUser
-  }
+  @IsDefined()
+  @IsString()
+  type: TypeUser
+}
 
   export enum TypeUser {
     ANONYMOUS = 'anonymous',

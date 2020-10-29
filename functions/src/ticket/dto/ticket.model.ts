@@ -14,7 +14,7 @@ export class Ticket {
 
 
 export enum TicketStatus {
-    OPEN = 'open',
-    IN_PROGRESS = 'in Progress',
-    DONE = 'done'
+  OPEN = 'open',
+  IN_PROGRESS = 'in Progress',
+  DONE = 'done'
 }
