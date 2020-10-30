@@ -54,7 +54,7 @@ export const deleteAllTicketForDays = functions.pubsub
     try {
       const ticketService = new TicketService()
       const allTicket = await ticketService.findAllTickets()
-      ticketService.deleteTicket(allTicket.map(t=>t.id))
+      ticketService.deleteTickets(allTicket.map(t=>t.id))
       return 'success'
     } catch (error) {
       return 'Error '+error.message
