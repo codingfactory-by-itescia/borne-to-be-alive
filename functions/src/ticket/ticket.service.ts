@@ -15,20 +15,15 @@ export class TicketService {
         ticket.id = (snapshot.length + 1).toString()
         ticket.status = TicketStatus.OPEN;
 
-        if(createTicketDto.type === TypeUser.IDENTIFY){
+        if(createTicketDto.type === TypeUser.IDENTIFIED){
             ticket.first_name = createTicketDto.first_name;
             ticket.last_name = createTicketDto.last_name;
             ticket.vitalId = createTicketDto.vitalId;
             ticket.phone = createTicketDto.phoneNumber;
-
-            const created = await getRepository(Ticket).create(ticket);
-            return created
         }
 
-        if(createTicketDto.type === TypeUser.ANONYMOUS){
-            const created = await getRepository(Ticket).create(ticket);
-            return created
-        }
+        const created = await getRepository(Ticket).create(ticket);
+        return created
     }
 
     async findAllTickets(): Promise<Ticket[]> {

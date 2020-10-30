@@ -1,4 +1,4 @@
-import { IsDefined, IsOptional, IsString } from 'class-validator';
+import { IsDefined, IsIn, IsOptional, IsString } from 'class-validator';
 
 export class CreateTicketDto {
 
@@ -19,11 +19,10 @@ export class CreateTicketDto {
   phoneNumber: string;
 
   @IsDefined()
-  @IsString()
   type: TypeUser
 }
 
   export enum TypeUser {
     ANONYMOUS = 'anonymous',
-    IDENTIFY = 'identify'
+    IDENTIFIED = 'identified'
   }
