@@ -46,12 +46,12 @@ export class TicketService {
         const updated = await getRepository(Ticket).update(ticket)
 
         if (status === TicketStatus.DONE)
-            await this.deleteTicket([ticket.id])
+            await this.deleteTickets([ticket.id])
 
         return updated
     }
 
-    async deleteTicket(ids: string[]): Promise<string> {
+    async deleteTickets(ids: string[]): Promise<string> {
         ids.forEach(async id => {
             await getRepository(Ticket).delete(id)
         })
