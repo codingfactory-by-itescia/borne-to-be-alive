@@ -1,8 +1,11 @@
 @import "../../assets/style/vars";
 
 .splashscreen {
+    min-height: 100vh;
+    background-color: #fff;
+
     section {
-        // height: calc(50vh - 150px);
+        height: 50vh;
         padding: 75px;
 
         &.top {
