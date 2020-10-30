@@ -44,7 +44,7 @@ export default class Ticket extends Component {
 					<div className='icon-container'>
 						<img src={icon_mobile} alt="mobile icon" className="icon" />
 					</div>
-					<Button onClick={this.click} type="primary" style={{ width: "100%" }}>Recevoir par SMS</Button>
+					<Button onClick={this.click} type="primary" style={{ width: "100%" }} disabled={this.state.isDisabled}>Recevoir par SMS</Button>
 				</Col>
 				<Col className='card' onClick={this.toggleDisable}>
 					<div className='icon-container'>

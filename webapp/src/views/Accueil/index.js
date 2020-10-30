@@ -18,11 +18,11 @@ export default class Accueil extends Component {
 		this.state = {
 			isDisabled: false,
 			user: {
-				first_name: "Mathilde",
-				last_name: "Arconte",
+				first_name: "",
+				last_name: "",
 				phoneNumber: "",
-				vitalId: "290751211221474",
-				type: "identified"
+				vitalId: "",
+				type: "anonymous"
 			},
 			redirect: false,
 			showTicket: false,
@@ -34,6 +34,14 @@ export default class Accueil extends Component {
 		setTimeout(() => {
 			this.setState({ redirect: true })
 		},30000)
+
+		this.setState({user: {
+			first_name: "Mathilde",
+			last_name: "Arconte",
+			phoneNumber: "",
+			vitalId: "290751211221474",
+			type: "identified"
+		}})
 	}
 	toggleComponent = (item) => {
 		if (item === "Ticket") {
@@ -65,6 +73,10 @@ export default class Accueil extends Component {
 				type: this.state.user.status
 			})
 
+			setTimeout(() => {
+				this.setState({ redirect: true })
+			},5000)
+
 		} catch (err) {
 			console.error(err);
 		}
@@ -93,8 +105,8 @@ export default class Accueil extends Component {
 			<Layout>
 				<Content>
 					<div className='text-container'>
-						<p className='greetings'><b>Bonjour</b> {user.name}</p>
-						<p className='number'>{user.id} </p>
+						<p className='greetings'><b>Bonjour</b> {user.first_name} {user.last_name}</p>
+						<p className='number'>{user.vitalId} </p>
 						<div className='info'>
 							<p><b>N°2</b> en consultation depuis 30min.</p>
 							<p>Il y a <b>2</b> personnes avant vous. Votre temps d'attente est estimé à <b>1h</b></p>
