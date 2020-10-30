@@ -40,7 +40,7 @@ export default class Accueil extends Component {
 			last_name: "Arconte",
 			phoneNumber: "",
 			vitalId: "290751211221474",
-			type: "identified"
+			type: "identify"
 		}})
 	}
 	toggleComponent = (item) => {
