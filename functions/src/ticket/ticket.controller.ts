@@ -1,4 +1,4 @@
-import { Body, Query, Controller, Get, Post, Param, Put, Delete} from '@nestjs/common';
+import { Body, Query, Controller, Get, Post, Param, Put, Delete, Patch} from '@nestjs/common';
 import { CreateTicketDto } from './dto';
 import { TicketStatus } from './dto/ticket.model';
 import { TicketSatatusValidationPipe } from './pipes/ticket-satatus-validation-pipe';
@@ -23,8 +23,13 @@ export class TicketController {
         return this.ticketService.findOneTicket(id);
     }
 
-    @Put(':id')
-    updateTicket(@Param('id') id: string, @Body('status', TicketSatatusValidationPipe) status: TicketStatus){
+    @Patch(':id/status/:status')
+    updateTicket(@Param('id') id: string, @Param('status', TicketSatatusValidationPipe) status: TicketStatus){
         return this.ticketService.updateTicket(id, status);
+    }
+
+    @Delete(':id')
+    deleteTicket(@Param('id') id: string,){
+        return this.ticketService.deleteTickets([id])
     }
 }
