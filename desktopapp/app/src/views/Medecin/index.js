@@ -3,62 +3,31 @@ import './style.scss';
 import { Button, Layout } from 'antd';
 import React, { Component } from 'react'
 
+import { Api } from '../../services/api.js'
+
 const { Content, Sider } = Layout;
 
 export default class Medecin extends Component {
 	state= {
-		tickets : [
-			{
-				id: 1,
-				name: "John Doe",
-				number: "29075120012278"
-			},
-			{
-				id: 2,
-				name: "Jane Doe",
-				number: "29075120012278"
-			},
-			{
-				id: 3,
-				name: "Do Doe",
+		tickets : [],
+	}
+	componentDidMount() {
+		this.getTickets()
 
-			},
-			{
-				id: 4,
-				name: "Harry Potter",
-				number: "29075120012278"
-			},
-			{
-				id: 5,
-				name: "Scott",
+	}
 
-			},
-			{
-				id: 5,
-				name: "Scott",
-
-			},
-			{
-				id: 5,
-				name: "Scott",
-
-			},
-			{
-				id: 5,
-				name: "Scott",
-
-			},
-		],
+	getTickets = async () => {
+		this.setState({ tickets: await Api.getTickets()})
 	}
 	render() {
 		return (
 			<Layout className="Medecin">
 				<Content>
-					<h1><b>Bonjour</b> Medecin</h1>
+					<h1><b>Bonjour</b> Dr Maboule</h1>
 					{this.state.tickets.map((ticket, index) => (
 						<div className="patientItem" key={index}>
-							<p className="title">n°{ticket.id} {ticket.name}</p>
-							{ticket.number && (<p className="number">{ticket.number}</p>)}
+							<p className="title">n°{ticket.id} {ticket.first_name} {ticket.last_name}</p>
+							{ticket.vitalId && (<p className="number">{ticket.vitalId}</p>)}
 						</div>
 					))}
 				</Content>
