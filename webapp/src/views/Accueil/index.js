@@ -18,8 +18,11 @@ export default class Accueil extends Component {
 		this.state = {
 			isDisabled: false,
 			user: {
-				name: "Rachel Bonneaux",
-				id: "290751211221474"
+				first_name: "Mathilde",
+				last_name: "Arconte",
+				phoneNumber: "",
+				vitalId: "290751211221474",
+				type: "identified"
 			},
 			redirect: false,
 			showTicket: false,
@@ -55,16 +58,23 @@ export default class Accueil extends Component {
 	createTicket = async () => {
 		try {
 			await Api.createTicket({
-				first_name: 'Mat',
-				last_name: 'Arc',
-				phoneNumber: '06843543',
-				vitalId: '290751211221474'
+				first_name: this.state.user.first_name,
+				last_name: this.state.user.last_name,
+				phoneNumber: this.state.user.phoneNumber,
+				vitalId: this.state.user.vitalId,
+				type: this.state.user.status
 			})
 
 		} catch (err) {
 			console.error(err);
 		}
 
+	}
+	handleChange = (e) => {
+		const phoneNumber = e.target.value;
+		this.setState((prevState) => ({
+			user: {...prevState.user, phoneNumber}
+		}))
 	}
 
 
@@ -92,7 +102,7 @@ export default class Accueil extends Component {
 					</div>
 					{showHome && (<NavigationHome toggle={this.toggleComponent}/>)}
 					{showTicket && (<Ticket user={this.state.user} toggle={this.toggleComponent} createTicket={this.createTicket}/>)}
-					{showSms && (<Sms user={this.state.user} toggle={this.toggleComponent}/>)}
+					{showSms && (<Sms user={this.state.user} toggle={this.toggleComponent} handleChange={this.handleChange} />)}
 					<img src={logo_blue} alt="borne to be alive logo" className='footer-logo' onClick={this.toggleComponent} />
 				</Content>
 			</Layout >

@@ -20,7 +20,7 @@ class Sms extends Component {
 	render() {
 		return (
 			<div style={{ width: "600px", margin: "0 auto" }}>
-				<Input className='phone-input' placeholder="Numéro de portable" style={{ width: "100%" }}/>
+				<Input className='phone-input' name="phoneNumber" placeholder="Numéro de portable" onChange={this.props.handleChange} name="phoneNumber" style={{ width: "100%" }}/>
 				<Button type="primary" style={{ width: "100%" }}>Envoyer</Button>
 			</div>
 		);

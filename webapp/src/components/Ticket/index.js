@@ -21,7 +21,8 @@ export default class Ticket extends Component {
 			ticket: {
 				name: this.props.user.name,
 				id: this.props.user.id,
-				awaitingTime: ""
+				awaitingTime: "",
+				type: this.props.user.status
 			}
 		})
 	}
