@@ -32,8 +32,12 @@ export default class Medecin extends Component {
 		this.setState({selectedConsult: item})
 	}
 
-	startConsult = async (item) => {
-		Api.updateTicketStatus("in progress")
+	startConsult = async (id) => {
+		Api.updateTicketStatus(id, "in_progress")
+
+	}
+	finishConsult = async (id) => {
+		Api.updateTicketStatus(id, "done")
 	}
 
 	render() {
@@ -43,7 +47,7 @@ export default class Medecin extends Component {
 				<Content>
 					<h1><b>Bonjour</b> Dr Maboule</h1>
 					{tickets.map((ticket,index) => (
-						<div className={`patientItem ${ticket.status === "in progress" ? "inProgess" : ""}`} key={index} onClick={() =>this.selectedConsult(ticket)}>
+						<div className={`patientItem ${ticket.status === "in_progress" ? "inProgess" : ""}`} key={index} onClick={() =>this.selectedConsult(ticket)}>
 							<p className="title">n°{ticket.id} {ticket.first_name} {ticket.last_name}</p>
 							{ticket.vitalId && (<p className="number">{ticket.vitalId}</p>)}
 						</div>
@@ -53,8 +57,8 @@ export default class Medecin extends Component {
 					<h1>N°{selectedConsult.id}</h1>
 					<h2>{selectedConsult.first_name} {selectedConsult.last_name}</h2>
 					<p>{selectedConsult.vitalId}</p>
-					{selectedConsult.status === "open" && (<Button style={{ width: '100%' }} onClick={this.startConsult}>Demarrer</Button>)}
-					{selectedConsult.status === "in progress" && (<Button style={{ width: '100%' }}>Terminer</Button>)}
+					{selectedConsult.status === "open" && (<Button style={{ width: '100%' }} onClick={() => this.startConsult(selectedConsult.id)}>Demarrer</Button>)}
+					{selectedConsult.status === "in_progress" && (<Button style={{ width: '100%' }} onClick={() => this.finishConsult(selectedConsult.id)}danger >Terminer</Button>)}
 				</Sider>
 			</Layout>
 		)
