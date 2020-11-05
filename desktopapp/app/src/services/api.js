@@ -31,13 +31,12 @@ export class Api {
 			console.log(err);
 		}
 	}
-	static async updateTicketStatus(status) {
-		const endpoint = "/ticket";
+	static async updateTicketStatus(id, status) {
+		const endpoint = `/tickets/${id}/status/${status}`;
 		const conf = {
-			method: 'PUT',
+			method: 'PATCH',
 			mode: 'cors',
 			cache: 'default',
-			body: JSON.stringify(status)
 		}
 		try {
 			const response = await Api.request(Api.base_url + endpoint,conf);
