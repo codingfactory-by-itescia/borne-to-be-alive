@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
-import { SmsController } from './sms.controller';
 import { SmsService } from './sms.service';
+import {client} from './twilio'
 
 @Module({
-  controllers: [SmsController],
-  providers: [SmsService]
+  controllers: [],
+  providers: [SmsService,{
+    provide: 'TWILIO_CLIENT',
+    useValue: client,
+  }],
+  exports: [SmsService]
 })
+
 export class SmsModule {}

@@ -24,7 +24,7 @@ export class TicketController {
     }
 
     @Patch(':id/status/:status')
-    updateTicket(@Param('id') id: string, @Param('status', TicketSatatusValidationPipe) status: TicketStatus){
+    updateTicket(@Param('id') id: string, @Param('status') status: TicketStatus){
         return this.ticketService.updateTicket(id, status);
     }
 

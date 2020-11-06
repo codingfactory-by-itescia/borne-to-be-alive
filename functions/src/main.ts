@@ -9,10 +9,12 @@ import * as admin from 'firebase-admin'
 import * as fireorm from 'fireorm';
 import * as serviceAccount from './accountService.json'
 import { TicketService } from 'ticket/ticket.service';
+import * as dotenv from 'dotenv'
 
-const server = express()
+const server = express();
 
 export const createNestServer = async (expressInstance) =>{
+  await dotenv.config();
   const app = await NestFactory.create(
       AppModule,
       new ExpressAdapter(expressInstance)
@@ -43,20 +45,21 @@ export const createNestServer = async (expressInstance) =>{
 }
 
 
-createNestServer(server).then(r => console.log("Nest Ready")).catch(e=>console.error("Nest broken ", e))
+// tslint:disable-next-line: no-console
+createNestServer(server).then(r => console.log('Nest Ready')).catch(e=>console.error('Nest broken ', e))
 
 export const api = functions.https.onRequest(server);
 
-export const deleteAllTicketForDays = functions.pubsub
-  .schedule('5 1 * * *')
-  .timeZone('Europe/Paris')
-  .onRun(async () => {
-    try {
-      const ticketService = new TicketService()
-      const allTicket = await ticketService.findAllTickets()
-      ticketService.deleteTickets(allTicket.map(t=>t.id))
-      return 'success'
-    } catch (error) {
-      return 'Error '+error.message
-    }
-  });
+// export const deleteAllTicketForDays = functions.pubsub
+//   .schedule('5 1 * * *')
+//   .timeZone('Europe/Paris')
+//   .onRun(async () => {
+//     try {
+//       const ticketService = new TicketService()
+//       const allTicket = await ticketService.findAllTickets()
+//       ticketService.deleteTickets(allTicket.map(t=>t.id))
+//       return 'success'
+//     } catch (error) {
+//       return 'Error '+error.message
+//     }
+//   });

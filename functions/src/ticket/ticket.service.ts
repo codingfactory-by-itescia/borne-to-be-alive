@@ -1,18 +1,23 @@
-import { BadRequestException, Injectable, NotAcceptableException, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable, NotAcceptableException, NotFoundException } from '@nestjs/common';
 import { Ticket, TicketStatus } from './dto/ticket.model'
 
 import { CreateTicketDto } from './dto';
 import { TypeUser } from './dto/createTicket.dto';
 import { getRepository } from 'fireorm';
+import { SmsService } from 'sms/sms.service';
+import { Sms, SmsMessageType } from 'sms/dto/sms.model';
 
 @Injectable()
 export class TicketService {
+
+    constructor(readonly smsService: SmsService){}
 
     async createTicket(createTicketDto: CreateTicketDto): Promise<Ticket> {
         const snapshot =  await this.findAllTickets()
 
         const ticket = new Ticket();
-        ticket.id = (snapshot.length + 1).toString()
+
+        ticket.id = snapshot.length === 0 ? '1' : (parseInt(snapshot[snapshot.length-1].id) + 1).toString()
         ticket.status = TicketStatus.OPEN;
 
         if(createTicketDto.type === TypeUser.IDENTIFIED){
@@ -20,6 +25,13 @@ export class TicketService {
             ticket.last_name = createTicketDto.last_name;
             ticket.vitalId = createTicketDto.vitalId;
             ticket.phone = createTicketDto.phoneNumber;
+        }
+
+        if(ticket.phone){
+            const newSms = new Sms()
+            newSms.phone = ticket.phone
+            newSms.message = SmsMessageType(ticket.id)
+            await this.smsService.sendSmsToUser(newSms)
         }
 
         const created = await getRepository(Ticket).create(ticket);
@@ -45,7 +57,7 @@ export class TicketService {
         ticket.status = newStatus
         const updated = await getRepository(Ticket).update(ticket)
 
-        if (status === TicketStatus.DONE)
+        if (newStatus === TicketStatus.DONE)
             await this.deleteTickets([ticket.id])
 
         return updated
