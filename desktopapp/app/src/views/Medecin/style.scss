@@ -14,6 +14,10 @@
         width: 595px;
         padding: 15px;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         .title {
             margin-bottom: 5px;
             text-transform: uppercase;
@@ -23,6 +27,11 @@
         .number {
             margin-bottom: 0;
             opacity: .7;
+        }
+
+        &.inProgess {
+            background-color: $color-primary;
+            color: #fff;
         }
     }
 

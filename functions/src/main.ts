@@ -1,28 +1,30 @@
-import { NestFactory } from '@nestjs/core';
-import { ValidationPipe } from '@nestjs/common';
-import { AppModule } from './app.module';
-import {ExpressAdapter} from '@nestjs/platform-express'
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as express from 'express'
-import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
+import * as express from 'express'
 import * as fireorm from 'fireorm';
+import * as functions from 'firebase-functions'
 import * as serviceAccount from './accountService.json'
-import { TicketService } from 'ticket/ticket.service';
+
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
+import { AppModule } from './app.module';
+import { ExpressAdapter } from '@nestjs/platform-express'
+import { NestFactory } from '@nestjs/core';
+
 import * as dotenv from 'dotenv'
+import { ValidationPipe } from '@nestjs/common';
 
 const server = express();
 
 export const createNestServer = async (expressInstance) =>{
   await dotenv.config();
   const app = await NestFactory.create(
-      AppModule,
-      new ExpressAdapter(expressInstance)
-    );
+    AppModule,
+    new ExpressAdapter(expressInstance)
+  );
 
-    app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe());
 
-    const options = new DocumentBuilder()
+  const options = new DocumentBuilder()
     .setTitle('Born to be alive')
     .setDescription('Api du projet')
     .setVersion('1.0')
@@ -38,7 +40,7 @@ export const createNestServer = async (expressInstance) =>{
 
   const firestore = admin.firestore();
   fireorm.initialize(firestore);
-  
+
   app.enableCors();
 
   return app.init();
@@ -49,17 +51,3 @@ export const createNestServer = async (expressInstance) =>{
 createNestServer(server).then(r => console.log('Nest Ready')).catch(e=>console.error('Nest broken ', e))
 
 export const api = functions.https.onRequest(server);
-
-// export const deleteAllTicketForDays = functions.pubsub
-//   .schedule('5 1 * * *')
-//   .timeZone('Europe/Paris')
-//   .onRun(async () => {
-//     try {
-//       const ticketService = new TicketService()
-//       const allTicket = await ticketService.findAllTickets()
-//       ticketService.deleteTickets(allTicket.map(t=>t.id))
-//       return 'success'
-//     } catch (error) {
-//       return 'Error '+error.message
-//     }
-//   });
